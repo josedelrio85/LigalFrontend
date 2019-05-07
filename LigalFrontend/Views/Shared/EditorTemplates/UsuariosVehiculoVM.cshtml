@@ -1,0 +1,11 @@
+﻿@model LigalFrontend.ViewModels.UsuariosVehiculoVM
+
+@{
+    ViewBag.variable = Model.GetHashCode().ToString();
+}
+
+
+<tr id="@(ViewBag.variable)">
+    <td>@Html.DropDownListFor(x => x.usuVehiculo.IDUSUARIO, new SelectList(Model.listaUsuarios, "ID", "NOMBRE"), new { @class = "form-control" })</td>
+    <td><a id="deleteFilaContent_ajax"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+</tr>

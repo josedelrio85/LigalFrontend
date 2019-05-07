@@ -1,0 +1,83 @@
+﻿@model LigalFrontend.ViewModels.UsuariosVM
+
+
+@{
+    ViewBag.Title = "Editar Usuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var controlador = ViewContext.RouteData.Values["controller"].ToString();
+}
+
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { name = "formEdit", id = "formEdit", @class = "form-horizontal" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+
+	@Html.HiddenFor(model => model.usuario.ID)
+    @Html.HiddenFor(model => model.usuario.ROWID)
+    @Html.HiddenFor(model => model.usuario.IDEMPRESA)
+    @Html.HiddenFor(model => model.usuario.IDTIPO)
+
+
+    <h2>@ViewBag.Title</h2>
+
+    <div class="form-group">
+        <div class="col-lg-6 col-sm-6">
+            @Html.LabelFor(vista => vista.usuario.CODIGO, new { @class = "" })
+            @Html.EditorFor(vista => vista.usuario.CODIGO, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(vista => vista.usuario.CODIGO)
+        </div>
+
+        <div class="col-lg-6 col-sm-6">
+            @Html.LabelFor(vista => vista.usuario.LOGIN, new { @class = "" })
+            @Html.TextBoxFor(vista => vista.usuario.LOGIN, new { @class = "form-control" })
+            @Html.ValidationMessageFor(vista => vista.usuario.LOGIN)
+        </div>
+
+        @*PASSWORD*@
+        <div class="col-lg-6 col-sm-6">
+            @Html.LabelFor(vista => vista.usuario.PWD, new { @class = "" })
+            @Html.EditorFor(vista => vista.usuario.PWD, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(vista => vista.usuario.PWD)
+        </div>
+
+        <div class="col-lg-6 col-sm-6">
+            @Html.LabelFor(vista => vista.usuario.NOMBRE, new { @class = "" })
+            @Html.TextBoxFor(vista => vista.usuario.NOMBRE, new { @class = "form-control" })
+            @Html.ValidationMessageFor(vista => vista.usuario.NOMBRE)
+        </div>
+
+        <div class="col-lg-6 col-sm-6">
+            @Html.LabelFor(vista => vista.usuario.APELLIDO1, new { @class = "" })
+            @Html.TextBoxFor(vista => vista.usuario.APELLIDO1, new { @class = "form-control" })
+            @Html.ValidationMessageFor(vista => vista.usuario.APELLIDO1)
+        </div>
+
+        <div class="col-lg-6 col-sm-6">
+            @Html.LabelFor(vista => vista.usuario.APELLIDO2, new { @class = "" })
+            @Html.TextBoxFor(vista => vista.usuario.APELLIDO2, new { @class = "form-control" })
+            @Html.ValidationMessageFor(vista => vista.usuario.APELLIDO2)
+        </div>
+
+        <div class="col-lg-6 col-sm-6">
+            @Html.LabelFor(vista => vista.usuario.DERECHOS, new { @class = "" })
+            @Html.EditorFor(vista => vista.usuario.DERECHOS, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(vista => vista.usuario.DERECHOS)
+        </div>
+
+        <div class="col-lg-6 col-sm-6">
+            @Html.LabelFor(vista => vista.usuario.USERTYPE, new { @class = "" })
+            @Html.DropDownList("selectTipoUsuario",new SelectList(Model.listaTipoUsuario, "ID", "ETIQUETA"), new { @class = "form-control", })
+            @Html.HiddenFor(vista => vista.usuario.USERTYPE)
+            @Html.ValidationMessageFor(vista => vista.usuario.USERTYPE)
+        </div>
+
+        <div class="col-lg-12 col-sm-12 col-xs-12 filaBotonera">
+            <input class="btn btn-default" id="botonLimpar" type="button" name="boton2" value="LIMPAR" onclick="resetForm(formEdit)" />
+            <input class="btn btn-primary" id="botonGardar" type="submit" name="boton" value="GARDAR" />
+            @Html.Hidden("RedirectTo", Url.Action("Index", controlador))
+            <input class="btn btn-warning" id="botonCancelar" type="button" name="boton" value="CANCELAR" onclick="redirect()" />
+        </div>
+    </div>
+}

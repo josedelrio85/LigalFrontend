@@ -1,0 +1,41 @@
+﻿@model IEnumerable<LigalFrontend.ViewModels.SeguimientoGpsVM>
+
+@using LigalFrontend.Helpers;
+@using PagedList.Mvc;
+@using PagedList;
+
+@{
+    Html.RenderPartial("~/Views/Shared/DisplayTemplates/divTituloTabla.cshtml");
+    var controlador = ViewBag.controlador;
+}
+
+@Html.Hidden("campoOculto")
+
+<div class="form-group">
+    <table class="table table-inverse table-hover">
+        <tr>
+            @Html.CustomThFor(model => model.First().usuario.NOMBRE)
+            @Html.CustomThFor(model => model.First().coordenadasGps.FECHAHORAPDA)
+            @Html.CustomThFor(model => model.First().coordenadasGps.LONGITUDGPS)
+            @Html.CustomThFor(model => model.First().coordenadasGps.LATITUDGPS)
+            @Html.CustomThFor(model => model.First().coordenadasGps.NPUNTO)
+        </tr>
+        @foreach (var item in Model)
+            {
+            <tr>
+                @Html.CustomTdFor(model => item.usuario.NOMBRE)
+                @Html.CustomTdFor(model => item.coordenadasGps.FECHAHORAPDA)
+                @Html.CustomTdFor(model => item.coordenadasGps.LONGITUDGPS)
+                @Html.CustomTdFor(model => item.coordenadasGps.LATITUDGPS)
+                @Html.CustomTdFor(model => item.coordenadasGps.NPUNTO)
+            </tr>
+        }
+    </table>
+</div>
+
+<div class="totalResultados">
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action(ViewBag.nombreAction, new { page }), new PagedListRenderOptions
+    {
+        LiElementClasses = new List<string> { "yourClass" }
+    })
+</div>

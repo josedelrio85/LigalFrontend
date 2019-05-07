@@ -1,0 +1,45 @@
+﻿@model IEnumerable<LigalFrontend.ViewModels.VehiculoVM>
+@using LigalFrontend.Helpers;
+
+@{
+    var controlador = ViewContext.RouteData.Values["controller"].ToString();
+}
+
+@{
+    Html.RenderPartial("~/Views/Shared/DisplayTemplates/divMuestraFiltro.cshtml", Model);
+}
+
+<div class="row" id="divFiltro">
+
+    <div class="col-lg-3 col-sm-3 col-xs-12">
+        @Html.LabelFor(vista => vista.First().buscador.MATRICULA, new { @class = "" })
+        @Html.TextBoxFor(vista => vista.First().buscador.MATRICULA, new { @class = "form-control" })
+        @Html.ValidationMessageFor(vista => vista.First().buscador.MATRICULA)
+    </div>
+
+    <div class="col-lg-3 col-sm-3 col-xs-12">
+        @Html.LabelFor(vista => vista.First().buscador.MODELO, new { @class = "" })
+        @Html.TextBoxFor(vista => vista.First().buscador.MODELO, new { @class = "form-control" })
+        @Html.ValidationMessageFor(vista => vista.First().buscador.MODELO)
+    </div>
+
+    <div class="col-lg-3 col-sm-3 col-xs-12">
+        @Html.LabelFor(vista => vista.First().buscador.ANHOCOMPRA, new { @class = "" })
+        @Html.DateHelperFor(vista => vista.First().buscador.ANHOCOMPRA)
+        @Html.ValidationMessageFor(vista => vista.First().buscador.ANHOCOMPRA)
+    </div>
+
+    <div class="col-lg-3 col-sm-3 col-xs-12">
+        @Html.LabelFor(vista => vista.First().buscador.COMBUSTIBLE, new { @class = "" })
+        @Html.TextBoxFor(vista => vista.First().buscador.COMBUSTIBLE, new { @class = "form-control" })
+        @Html.ValidationMessageFor(vista => vista.First().buscador.COMBUSTIBLE)
+    </div>
+
+    <div class="col-lg-12 col-sm-12 col-xs-12">
+        <div class="btnFiltro">
+            <input type="button" value="Limpia" onclick="resetFiltro('divFiltro')" class="btn btn-warning">
+            <input type="button" value="Filtra" id="filtro" class="btn btn-info">
+        </div>
+    </div>
+
+</div>

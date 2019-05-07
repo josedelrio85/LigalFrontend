@@ -1,0 +1,2622 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LigalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="gen_actionlogs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDSEARCH" Type="int" />
+          <Property Name="VE_NUM_IDENTIF" Type="nvarchar" MaxLength="13" />
+          <Property Name="VE_NUM_ALIAS" Type="nvarchar" MaxLength="4" />
+          <Property Name="VE_PAIS" Type="nvarchar" MaxLength="1" />
+          <Property Name="VE_NUM_ALIAS_2" Type="int" />
+          <Property Name="VE_TIPO_REGISTRO" Type="nvarchar" MaxLength="1" />
+          <Property Name="NEWACTION" Type="int" />
+          <Property Name="NOMTABLA" Type="nvarchar" MaxLength="100" />
+          <Property Name="TIPO" Type="int" />
+          <Property Name="VI_NUM_IDENTIF_V" Type="nvarchar" MaxLength="3" />
+          <Property Name="VI_NUM_IDENTIF_I" Type="nvarchar" MaxLength="17" />
+          <Property Name="DO_NUM_IDENTIF_V" Type="nvarchar" MaxLength="3" />
+          <Property Name="DO_NUM_IDENTIF_I" Type="nvarchar" MaxLength="17" />
+          <Property Name="DO_CLAVE_DOMICILIO" Type="nvarchar" MaxLength="3" />
+          <Property Name="MID" Type="int" />
+          <Property Name="PB_NUM_NAC_IDEN" Type="nvarchar" MaxLength="10" />
+          <Property Name="PB_PAIS" Type="nvarchar" MaxLength="1" />
+          <Property Name="PB_NUM_IDENTIF" Type="nvarchar" MaxLength="13" />
+          <Property Name="PB_NUM_ALIAS" Type="int" />
+          <Property Name="PB_TIPO_REGISTRO" Type="nvarchar" MaxLength="1" />
+          <Property Name="NTRANSFORM" Type="nvarchar" MaxLength="200" />
+          <Property Name="NTRANSFORMSEARCH" Type="nvarchar" MaxLength="200" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="gen_antibioticos">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NomeProducto" Type="varchar" MaxLength="50" />
+          <Property Name="Aplicacion" Type="varchar" MaxLength="10" />
+          <Property Name="IDCODLAB" Type="int" />
+          <Property Name="CODLAB" Type="int" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="gen_bolsas">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CODIGOB" Type="varchar" MaxLength="30" />
+          <Property Name="IDCLIENTE" Type="int" />
+          <Property Name="IDMOTIVO" Type="int" />
+          <Property Name="FECHASALIDA" Type="datetime" />
+          <Property Name="FECHAENTREGA" Type="nvarchar" MaxLength="50" />
+          <Property Name="TIPOINFO" Type="nvarchar" MaxLength="120" />
+          <Property Name="OBSERVACIONES" Type="nvarchar" MaxLength="120" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+          <Property Name="IDSERIE" Type="int" />
+          <Property Name="FECHA" Type="datetime" />
+          <Property Name="IDMONEDA" Type="int" />
+          <Property Name="NOMCLIENTE" Type="nvarchar" MaxLength="100" />
+          <Property Name="DIRCLIENTE" Type="nvarchar" MaxLength="50" />
+          <Property Name="IDTIPODOC" Type="int" />
+          <Property Name="NUMERO" Type="int" />
+          <Property Name="NUMCOMPLETO" Type="nvarchar" MaxLength="50" />
+          <Property Name="IDEMPRESA" Type="int" />
+          <Property Name="ROWGUID" Type="nvarchar" MaxLength="50" />
+          <Property Name="IDPUNTO" Type="int" />
+          <Property Name="EXECUTED" Type="int" />
+        </EntityType>
+        <EntityType Name="gen_bolsasrecogida">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDRECOGIDA" Type="int" />
+          <Property Name="CODBOLSA" Type="nvarchar" MaxLength="50" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="gen_clientes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CODIGOC" Type="nvarchar" MaxLength="50" />
+          <Property Name="NOMBREC" Type="nvarchar" MaxLength="50" />
+          <Property Name="DIRECCION" Type="nvarchar" MaxLength="50" />
+          <Property Name="TELEFONO" Type="nvarchar" MaxLength="50" />
+          <Property Name="MOVIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="255" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+          <Property Name="POBLACION" Type="nvarchar" MaxLength="50" />
+          <Property Name="PROVINCIA" Type="nvarchar" MaxLength="50" />
+          <Property Name="CPOSTAL" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Gen_clientesenpunto">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDCLIENTE" Type="int" />
+          <Property Name="IDPUNTO" Type="int" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="gen_conectargps">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LONGITUD" Type="nvarchar" MaxLength="12" />
+          <Property Name="LATITUD" Type="nvarchar" MaxLength="12" />
+          <Property Name="RUMBO" Type="nvarchar" MaxLength="12" />
+          <Property Name="FGPS" Type="nvarchar" MaxLength="12" />
+          <Property Name="HGPS" Type="nvarchar" MaxLength="12" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="12" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="GEN_CONSOLAREPLICA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="GEN_CONSOLAVBS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MSG" Type="nvarchar" MaxLength="21" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="GEN_CONTROLTEMPERATURA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDUSUARIO" Type="int" />
+          <Property Name="FECHA" Type="datetime" />
+          <Property Name="CODPUNTO" Type="nvarchar" MaxLength="15" />
+          <Property Name="COORDX" Type="nvarchar" MaxLength="100" />
+          <Property Name="COORDY" Type="nvarchar" MaxLength="100" />
+          <Property Name="POSX" Type="float" />
+          <Property Name="POSY" Type="float" />
+          <Property Name="OBSERVA" Type="nvarchar" MaxLength="255" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="GEN_COORDENADASGPS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDEMPRESA" Type="int" />
+          <Property Name="IDUSUARIO" Type="int" />
+          <Property Name="LATITUDGPS" Type="float" />
+          <Property Name="LONGITUDGPS" Type="float" />
+          <Property Name="RUMBOGPS" Type="float" />
+          <Property Name="FECHAHORAGPS" Type="datetime" />
+          <Property Name="FECHAHORAPDA" Type="datetime" />
+          <Property Name="OPCIONES" Type="int" />
+          <Property Name="OP1" Type="int" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+          <Property Name="NPUNTO" Type="nvarchar" MaxLength="50" />
+          <Property Name="DISTANCIA" Type="float" />
+        </EntityType>
+        <EntityType Name="Gen_Correos">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DIRFROM" Type="nvarchar" MaxLength="255" />
+          <Property Name="DIRTO" Type="nvarchar" MaxLength="255" />
+          <Property Name="CC" Type="nvarchar" MaxLength="255" />
+          <Property Name="ASUNTO" Type="nvarchar" MaxLength="255" />
+          <Property Name="CUERPO" Type="ntext" />
+          <Property Name="ENVIADO" Type="int" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+          <Property Name="SERVER" Type="nvarchar" MaxLength="255" />
+          <Property Name="ATTACHMENT" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="gen_detvisita">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDVISITA" Type="int" />
+          <Property Name="IDLABORATORIO" Type="int" />
+          <Property Name="IDANTIBIOTICO" Type="int" />
+          <Property Name="LACSEC" Type="bit" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="GEN_DIARIOMATRICULA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDUV" Type="int" />
+          <Property Name="FECHA" Type="datetime" />
+          <Property Name="KMINICIALES" Type="float" />
+          <Property Name="KMFINALES" Type="float" />
+          <Property Name="IDTAREA" Type="nvarchar" MaxLength="50" />
+          <Property Name="TAREAS" Type="nvarchar" MaxLength="255" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="gen_Distancia">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CODDIST" Type="nvarchar" MaxLength="10" />
+          <Property Name="DISTANCIA" Type="float" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="gen_empresa">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDPADRE" Type="int" />
+          <Property Name="IDMONEDA" Type="int" />
+          <Property Name="CODIGO" Type="int" />
+          <Property Name="ETIQUETA" Type="nvarchar" MaxLength="50" />
+          <Property Name="NOMBRE2" Type="nvarchar" MaxLength="50" />
+          <Property Name="NIF" Type="nvarchar" MaxLength="50" />
+          <Property Name="TIPOVIA" Type="nvarchar" MaxLength="50" />
+          <Property Name="CALLE" Type="nvarchar" MaxLength="50" />
+          <Property Name="NUMERO" Type="nvarchar" MaxLength="50" />
+          <Property Name="ESCALERA" Type="nvarchar" MaxLength="50" />
+          <Property Name="PISO" Type="nvarchar" MaxLength="50" />
+          <Property Name="PUERTA" Type="nvarchar" MaxLength="50" />
+          <Property Name="POBLACION" Type="nvarchar" MaxLength="50" />
+          <Property Name="CP" Type="nvarchar" MaxLength="50" />
+          <Property Name="PROVINCIA" Type="nvarchar" MaxLength="50" />
+          <Property Name="TELEFONO" Type="nvarchar" MaxLength="50" />
+          <Property Name="FAX" Type="nvarchar" MaxLength="50" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="120" />
+          <Property Name="URL" Type="nvarchar" MaxLength="120" />
+          <Property Name="CUENTACONT" Type="nvarchar" MaxLength="50" />
+          <Property Name="CUENTABANC" Type="nvarchar" MaxLength="50" />
+          <Property Name="RECARGO" Type="int" />
+          <Property Name="OPCIONES" Type="int" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="gen_estados">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="nvarchar" MaxLength="50" />
+          <Property Name="SIMBOLO" Type="nvarchar" MaxLength="50" />
+          <Property Name="PROPS" Type="int" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="gen_globalsearch">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VE_NUM_IDENTIF" Type="nvarchar" MaxLength="13" />
+          <Property Name="VE_NUM_ALIAS" Type="nvarchar" MaxLength="4" />
+          <Property Name="VE_PAIS" Type="nvarchar" MaxLength="1" />
+          <Property Name="VE_NUM_ALIAS_2" Type="int" />
+          <Property Name="VE_TIPO_REGISTRO" Type="nvarchar" MaxLength="1" />
+          <Property Name="TIPO" Type="int" />
+          <Property Name="NOMTABLA" Type="nvarchar" MaxLength="100" />
+          <Property Name="VI_NUM_IDENTIF_V" Type="nvarchar" MaxLength="3" />
+          <Property Name="VI_NUM_IDENTIF_I" Type="nvarchar" MaxLength="17" />
+          <Property Name="DO_NUM_IDENTIF_V" Type="nvarchar" MaxLength="3" />
+          <Property Name="DO_NUM_IDENTIF_I" Type="nvarchar" MaxLength="17" />
+          <Property Name="DO_CLAVE_DOMICILIO" Type="nvarchar" MaxLength="3" />
+          <Property Name="PB_NUM_NAC_IDEN" Type="nvarchar" MaxLength="10" />
+          <Property Name="PB_PAIS" Type="nvarchar" MaxLength="1" />
+          <Property Name="PB_NUM_IDENTIF" Type="nvarchar" MaxLength="13" />
+          <Property Name="PB_NUM_ALIAS" Type="int" />
+          <Property Name="PB_TIPO_REGISTRO" Type="nvarchar" MaxLength="1" />
+          <Property Name="NTRANSFORMSEARCH" Type="nvarchar" MaxLength="200" />
+          <Property Name="NTRANSFORM" Type="nvarchar" MaxLength="200" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="gen_gradillas">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CODIGOGR" Type="nvarchar" MaxLength="50" />
+          <Property Name="NFRASCOS" Type="int" />
+          <Property Name="IDRECOGIDA" Type="int" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="gen_inicioruta">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="INICIORUTA" Type="nvarchar" MaxLength="50" />
+          <Property Name="IDRUTA" Type="int" />
+          <Property Name="HORARUTA" Type="nvarchar" MaxLength="50" />
+          <Property Name="KMINICIO" Type="float" />
+          <Property Name="KMFIN" Type="float" />
+          <Property Name="TOTALKM" Type="float" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+          <Property Name="IDUSUARIO" Type="int" />
+          <Property Name="ABIERTA" Type="int" />
+          <Property Name="FECHA" Type="datetime" />
+        </EntityType>
+        <EntityType Name="gen_inspecciones">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FechaHoraRegistro" Type="datetime" />
+          <Property Name="FechaHoraVisita" Type="datetime" />
+          <Property Name="TipoInspeccion" Type="char" MaxLength="1" />
+          <Property Name="Situacion" Type="char" MaxLength="1" />
+          <Property Name="IDUsuario" Type="int" />
+          <Property Name="IDMuestraRecogida" Type="char" MaxLength="12" />
+          <Property Name="IDExplotacion" Type="char" MaxLength="10" />
+          <Property Name="IDMuestraOrigen" Type="char" MaxLength="10" />
+          <Property Name="FechaMuestraOrigen" Type="datetime" />
+          <Property Name="FechaAnalisisOrigen" Type="datetime" />
+          <Property Name="ResultadoCHARM" Type="varchar" MaxLength="50" />
+          <Property Name="IDIndustria" Type="nvarchar" MaxLength="10" />
+          <Property Name="Observaciones" Type="varchar" MaxLength="255" />
+          <Property Name="Informado" Type="int" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+          <Property Name="Actualizado" Type="int" />
+          <Property Name="Resultado" Type="varchar" MaxLength="50" />
+          <Property Name="FechaSiguienteVisita" Type="datetime" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Direccion" Type="varchar" MaxLength="50" />
+          <Property Name="Poblacion" Type="varchar" MaxLength="30" />
+          <Property Name="Provincia" Type="varchar" MaxLength="10" />
+          <Property Name="Telefono1" Type="varchar" MaxLength="10" />
+          <Property Name="Telefono2" Type="varchar" MaxLength="10" />
+          <Property Name="INDUSTRIAN" Type="varchar" MaxLength="50" />
+          <Property Name="IDORIGEN" Type="int" />
+          <Property Name="Destrucion" Type="int" />
+          <Property Name="NumeroVisita" Type="int" />
+          <Property Name="LitrosLeche" Type="int" />
+          <Property Name="NumMuxiduras" Type="int" />
+          <Property Name="SERIEGANADERO" Type="int" />
+          <Property Name="IDOBSERVA" Type="int" />
+          <Property Name="MAMITE" Type="int" />
+          <Property Name="MAMITESN" Type="int" />
+          <Property Name="OUTRAS" Type="int" />
+          <Property Name="OUTRASSN" Type="int" />
+          <Property Name="PARTO" Type="int" />
+          <Property Name="PARTOSN" Type="int" />
+          <Property Name="ASOCIACION" Type="int" />
+          <Property Name="ASOCIACIONSN" Type="int" />
+          <Property Name="EMPDOSIS" Type="int" />
+          <Property Name="TRATAINTRAM" Type="int" />
+          <Property Name="ORDEMUXI" Type="int" />
+          <Property Name="MUXIERRO" Type="int" />
+          <Property Name="INCORPORACION" Type="int" />
+          <Property Name="NOIDENTIF" Type="int" />
+          <Property Name="TRATANIERR" Type="int" />
+          <Property Name="ERRCOMUNI" Type="int" />
+          <Property Name="NONCAUSA" Type="int" />
+          <Property Name="ALGUNTRATA" Type="int" />
+          <Property Name="NONCOMPROBAT" Type="int" />
+          <Property Name="NONADMINT" Type="int" />
+          <Property Name="NONPPOSIBLEE" Type="int" />
+          <Property Name="OBSTRATA" Type="nvarchar" MaxLength="100" />
+          <Property Name="VacasLacta" Type="int" />
+          <Property Name="NONDESTRUCION" Type="int" />
+          <Property Name="MODIFICADO" Type="int" />
+          <Property Name="COORDX" Type="nvarchar" MaxLength="100" />
+          <Property Name="COORDY" Type="nvarchar" MaxLength="100" />
+          <Property Name="POSX" Type="float" />
+          <Property Name="POSY" Type="float" />
+          <Property Name="INCORPORACACION" Type="int" />
+          <Property Name="NONPOSIBLEE" Type="int" />
+          <Property Name="DIRGPS" Type="nvarchar" MaxLength="15" />
+          <Property Name="RESULTADOQUINO" Type="nvarchar" MaxLength="50" />
+          <Property Name="SOLICITATEST" Type="int" />
+          <Property Name="XONE" Type="int" />
+          <Property Name="FOTO1" Type="varchar" MaxLength="100" />
+          <Property Name="FOTO2" Type="varchar" MaxLength="100" />
+          <Property Name="FOTO3" Type="varchar" MaxLength="100" />
+          <Property Name="VIDEO" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="gen_laboratorios">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDCODLAB" Type="int" />
+          <Property Name="CODLAB" Type="int" />
+          <Property Name="LABORATORIO" Type="varchar" MaxLength="50" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="gen_monedas">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ETIQUETA" Type="nvarchar" MaxLength="50" />
+          <Property Name="SIMBOLO" Type="nvarchar" MaxLength="50" />
+          <Property Name="CAMBIO" Type="float" />
+          <Property Name="NDIGITOS" Type="int" />
+          <Property Name="FBAJA" Type="datetime" />
+          <Property Name="BAJA" Type="int" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="gen_motivos">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="nvarchar" MaxLength="50" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="gen_observa">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OBSERVA" Type="nvarchar" MaxLength="30" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="gen_ObsInsp">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OBSERVA" Type="nvarchar" MaxLength="50" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="gen_perifericos">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDTIPO" Type="int" />
+          <Property Name="TEXTO" Type="nvarchar" MaxLength="255" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="gen_productos">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CODIGOPRO" Type="nvarchar" MaxLength="50" />
+          <Property Name="PRODUCTO" Type="nvarchar" MaxLength="50" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="gen_productosgr">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDPRODUCTO" Type="int" />
+          <Property Name="CANTIDAD" Type="int" />
+          <Property Name="CTEMPERATURA" Type="float" />
+          <Property Name="TEMPERATURA" Type="float" />
+          <Property Name="IDRECOGIDA" Type="int" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+          <Property Name="IDRECOGIDAN" Type="int" />
+        </EntityType>
+        <EntityType Name="gen_programacion">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FECHA" Type="datetime" />
+          <Property Name="RECOGEDOR" Type="nvarchar" MaxLength="50" />
+          <Property Name="CODPUNTO" Type="nvarchar" MaxLength="50" />
+          <Property Name="INDUSTRIA" Type="nvarchar" MaxLength="50" />
+          <Property Name="NUM_MUESTRAS" Type="int" />
+          <Property Name="OK" Type="int" />
+          <Property Name="IDX" Type="int" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="gen_puntorecogidadia">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDPUNTO" Type="int" />
+          <Property Name="FECHA" Type="datetime" />
+          <Property Name="IDUSUARIO" Type="int" />
+          <Property Name="PROGRAMADO" Type="int" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+          <Property Name="VISITADO" Type="int" />
+          <Property Name="HORA" Type="nvarchar" MaxLength="10" />
+          <Property Name="FOTO1" Type="varchar" MaxLength="100" />
+          <Property Name="FOTO2" Type="varchar" MaxLength="100" />
+          <Property Name="FOTO3" Type="varchar" MaxLength="100" />
+          <Property Name="VIDEO" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="gen_puntosenruta">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDPUNTO" Type="int" />
+          <Property Name="IDRUTA" Type="int" />
+          <Property Name="NUMGRADILLAS" Type="int" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="GEN_PUNTOSRECOGIDA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CODIGOP" Type="nvarchar" MaxLength="11" />
+          <Property Name="NOMBRE" Type="nvarchar" MaxLength="100" />
+          <Property Name="COORDX" Type="float" />
+          <Property Name="COORDY" Type="float" />
+          <Property Name="POSX" Type="float" />
+          <Property Name="POSY" Type="float" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+          <Property Name="DIRGPS" Type="nvarchar" MaxLength="15" />
+          <Property Name="IDUSUARIO" Type="int" />
+          <Property Name="IDUSUARIOR" Type="int" />
+          <Property Name="DESCRIPCION" Type="nvarchar" MaxLength="120" />
+          <Property Name="DISTANCIA" Type="float" />
+        </EntityType>
+        <EntityType Name="gen_recogidas">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDRUTA" Type="int" />
+          <Property Name="IDPUNTO" Type="int" />
+          <Property Name="IDUSUARIO" Type="int" />
+          <Property Name="IDCLIENTE" Type="int" />
+          <Property Name="FECHA" Type="datetime" />
+          <Property Name="HORA" Type="nvarchar" MaxLength="50" />
+          <Property Name="GRADDEJA" Type="int" />
+          <Property Name="OBSERVACIONES" Type="nvarchar" MaxLength="255" />
+          <Property Name="GRADRECOGE" Type="int" />
+          <Property Name="NUMFRASCOS" Type="int" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+          <Property Name="IDSERIE" Type="int" />
+          <Property Name="IDMONEDA" Type="int" />
+          <Property Name="NOMCLIENTE" Type="nvarchar" MaxLength="100" />
+          <Property Name="DIRCLIENTE" Type="nvarchar" MaxLength="100" />
+          <Property Name="IDTIPODOC" Type="int" />
+          <Property Name="NUMERO" Type="int" />
+          <Property Name="NUMCOMPLETO" Type="nvarchar" MaxLength="50" />
+          <Property Name="IDEMPRESA" Type="int" />
+          <Property Name="GRESTIMADAS" Type="int" />
+          <Property Name="IDMOTIVO" Type="int" />
+          <Property Name="FPROGRAMADA" Type="datetime" />
+          <Property Name="EXECUTED" Type="int" />
+          <Property Name="PROGRAMADA" Type="int" />
+          <Property Name="IDLIGAL" Type="int" />
+          <Property Name="MAIL" Type="int" />
+        </EntityType>
+        <EntityType Name="gen_recogidasR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDCLIENTE" Type="int" />
+          <Property Name="GRESTIMADAS" Type="int" />
+          <Property Name="GRADDEJA" Type="int" />
+          <Property Name="GRADRECOGE" Type="int" />
+          <Property Name="NUMFRASCOS" Type="int" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+          <Property Name="IDRECOGIDA" Type="int" />
+          <Property Name="IDOBSERVA" Type="int" />
+          <Property Name="OBSERVACIONES" Type="nvarchar" MaxLength="100" />
+          <Property Name="FOTO1" Type="varchar" MaxLength="100" />
+          <Property Name="FOTO2" Type="varchar" MaxLength="100" />
+          <Property Name="FOTO3" Type="varchar" MaxLength="100" />
+          <Property Name="VIDEO" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="GEN_RESULTADOQUINOLONAS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="nvarchar" MaxLength="50" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="gen_resultados">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="nvarchar" MaxLength="50" />
+          <Property Name="TIPO" Type="int" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="gen_rutasrecogida">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CODIGOR" Type="nvarchar" MaxLength="50" />
+          <Property Name="DESCRIPCION" Type="nvarchar" MaxLength="100" />
+          <Property Name="FECHA" Type="smalldatetime" />
+          <Property Name="GRADILLAS" Type="int" />
+          <Property Name="IDUSUARIO" Type="int" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="GEN_SERIECOORDENADAS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SERIEGAN" Type="int" />
+          <Property Name="FECHA" Type="datetime" />
+          <Property Name="COORDX" Type="nvarchar" MaxLength="100" />
+          <Property Name="COORDY" Type="nvarchar" MaxLength="100" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+          <Property Name="DIRGPS" Type="nvarchar" MaxLength="15" />
+          <Property Name="XONE" Type="int" />
+        </EntityType>
+        <EntityType Name="gen_series">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SERIE" Type="nvarchar" MaxLength="50" />
+          <Property Name="DESCRIPCION" Type="nvarchar" MaxLength="50" />
+          <Property Name="PREFIJO" Type="nvarchar" MaxLength="50" />
+          <Property Name="SUFIJO" Type="nvarchar" MaxLength="50" />
+          <Property Name="SIGNO" Type="nvarchar" MaxLength="50" />
+          <Property Name="IDEMPRESA" Type="int" />
+          <Property Name="PRIMERO" Type="int" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="GEN_TAREASDIARIO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="nvarchar" MaxLength="255" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="GEN_TIPOINCIDENCIARUTA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="INCIDENCIA" Type="nvarchar" MaxLength="250" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="Gen_tiposDocumento">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SIMBOLO" Type="nvarchar" MaxLength="20" />
+          <Property Name="DESCRIPCION" Type="nvarchar" MaxLength="50" />
+          <Property Name="REPORTE" Type="nvarchar" MaxLength="50" />
+          <Property Name="OPCIONES" Type="nvarchar" MaxLength="50" />
+          <Property Name="PLANTILLA" Type="nvarchar" MaxLength="50" />
+          <Property Name="LINEAS" Type="nvarchar" MaxLength="50" />
+          <Property Name="ENCABEZADO" Type="int" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="gen_tipouser">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CODIGO" Type="int" />
+          <Property Name="ETIQUETA" Type="nvarchar" MaxLength="50" />
+          <Property Name="DERECHOS" Type="int" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="GEN_TIPOVISITA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TIPOVISITA" Type="nvarchar" MaxLength="10" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="gen_trata">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDINSP" Type="int" />
+          <Property Name="FECHAT" Type="datetime" />
+          <Property Name="IDTRATA" Type="int" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="gen_usuarios">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDEMPRESA" Type="int" />
+          <Property Name="IDTIPO" Type="int" />
+          <Property Name="LOGIN" Type="nvarchar" MaxLength="50" />
+          <Property Name="PWD" Type="nvarchar" MaxLength="50" />
+          <Property Name="NOMBRE" Type="nvarchar" MaxLength="50" />
+          <Property Name="APELLIDO1" Type="nvarchar" MaxLength="50" />
+          <Property Name="APELLIDO2" Type="nvarchar" MaxLength="50" />
+          <Property Name="DERECHOS" Type="int" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+          <Property Name="CODIGO" Type="int" />
+          <Property Name="USERTYPE" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="GEN_USUARIOSVEHICULO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDUSUARIO" Type="int" />
+          <Property Name="IDMATRICULA" Type="int" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="GEN_VEHICULO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MATRICULA" Type="nvarchar" MaxLength="50" />
+          <Property Name="MODELO" Type="nvarchar" MaxLength="50" />
+          <Property Name="ANHOCOMPRA" Type="datetime" />
+          <Property Name="TIPOCOMBUSTIBLE" Type="nvarchar" MaxLength="50" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="gen_visitas">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DATAFICHA" Type="datetime" />
+          <Property Name="GANDEIRO" Type="varchar" MaxLength="50" />
+          <Property Name="SERIE" Type="int" />
+          <Property Name="DATAMOSTRA" Type="datetime" />
+          <Property Name="RESULTADO" Type="varchar" MaxLength="50" />
+          <Property Name="NUMVACAS" Type="int" />
+          <Property Name="LITROSLEITE" Type="int" />
+          <Property Name="RESULTADOCHARM" Type="varchar" MaxLength="50" />
+          <Property Name="MAMITES" Type="bit" />
+          <Property Name="PRESCRIPCION" Type="bit" />
+          <Property Name="REXTRATAMENTO" Type="bit" />
+          <Property Name="RECEITAS" Type="bit" />
+          <Property Name="ALMACENAMED" Type="bit" />
+          <Property Name="TEMPESPMAL" Type="bit" />
+          <Property Name="TEMPESPINCUMP" Type="bit" />
+          <Property Name="TEMPESPAXUST" Type="bit" />
+          <Property Name="TARTASECFORA" Type="bit" />
+          <Property Name="OUTROSMEDIC" Type="bit" />
+          <Property Name="TRATAINTRAMAMA" Type="bit" />
+          <Property Name="ORDMUXINCORREC" Type="bit" />
+          <Property Name="UTILMEDINADEC" Type="bit" />
+          <Property Name="ANIMALNOVO" Type="bit" />
+          <Property Name="OUTROS" Type="bit" />
+          <Property Name="OBSERVA" Type="varchar" MaxLength="250" />
+          <Property Name="ACTUALIZADO" Type="int" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="gen_visitavet">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDUSUARIO" Type="int" />
+          <Property Name="FECHA" Type="datetime" />
+          <Property Name="SERIEGAN" Type="int" />
+          <Property Name="COORDX" Type="varchar" MaxLength="100" />
+          <Property Name="COORDY" Type="varchar" MaxLength="100" />
+          <Property Name="POSX" Type="float" />
+          <Property Name="POSY" Type="float" />
+          <Property Name="OBSERVA" Type="varchar" MaxLength="255" />
+          <Property Name="ACTUALIZADO" Type="int" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" />
+          <Property Name="PRECISION" Type="float" />
+          <Property Name="FOTO1" Type="varchar" MaxLength="100" />
+          <Property Name="FOTO2" Type="varchar" MaxLength="100" />
+          <Property Name="FOTO3" Type="varchar" MaxLength="100" />
+          <Property Name="VIDEO" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="master_replica_queue">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="50" />
+          <Property Name="OPERID" Type="nvarchar" MaxLength="100" />
+          <Property Name="TIMESTAMP" Type="nvarchar" MaxLength="50" />
+          <Property Name="OPER" Type="int" />
+          <Property Name="MID" Type="int" />
+          <Property Name="SQL" Type="ntext" />
+          <Property Name="DMID" Type="int" />
+          <Property Name="CONDITIONAL" Type="int" />
+          <Property Name="TBL" Type="nvarchar" MaxLength="50" />
+          <Property Name="DMIDPR" Type="int" />
+          <Property Name="DISABLED" Type="int" />
+          <Property Name="BATCHSIZE" Type="int" />
+          <Property Name="RCVTIMESTAMP" Type="datetime" />
+          <Property Name="PRTIMESTAMP" Type="datetime" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'D:\WARNIER\PROYECTOS\LIGAL\RECURSOS TRANSFERENCIA JSV\LIGALFRONTEND\LIGALFRONTEND\APP_DATA\LIGAL.MDF.dbo.rl' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="rl">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="T1" Type="nvarchar" MaxLength="100" />
+          <Property Name="F1" Type="nvarchar" MaxLength="100" />
+          <Property Name="T2" Type="nvarchar" MaxLength="100" />
+          <Property Name="F2" Type="nvarchar" MaxLength="100" />
+          <Property Name="T" Type="nvarchar" MaxLength="100" />
+          <Property Name="CND" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="LigalModelStoreContainer">
+          <EntitySet Name="gen_actionlogs" EntityType="Self.gen_actionlogs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_antibioticos" EntityType="Self.gen_antibioticos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_bolsas" EntityType="Self.gen_bolsas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_bolsasrecogida" EntityType="Self.gen_bolsasrecogida" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_clientes" EntityType="Self.gen_clientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gen_clientesenpunto" EntityType="Self.Gen_clientesenpunto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_conectargps" EntityType="Self.gen_conectargps" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_CONSOLAREPLICA" EntityType="Self.GEN_CONSOLAREPLICA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_CONSOLAVBS" EntityType="Self.GEN_CONSOLAVBS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_CONTROLTEMPERATURA" EntityType="Self.GEN_CONTROLTEMPERATURA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_COORDENADASGPS" EntityType="Self.GEN_COORDENADASGPS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gen_Correos" EntityType="Self.Gen_Correos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_detvisita" EntityType="Self.gen_detvisita" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_DIARIOMATRICULA" EntityType="Self.GEN_DIARIOMATRICULA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_Distancia" EntityType="Self.gen_Distancia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_empresa" EntityType="Self.gen_empresa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_estados" EntityType="Self.gen_estados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_globalsearch" EntityType="Self.gen_globalsearch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_gradillas" EntityType="Self.gen_gradillas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_inicioruta" EntityType="Self.gen_inicioruta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_inspecciones" EntityType="Self.gen_inspecciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_laboratorios" EntityType="Self.gen_laboratorios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_monedas" EntityType="Self.gen_monedas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_motivos" EntityType="Self.gen_motivos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_observa" EntityType="Self.gen_observa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_ObsInsp" EntityType="Self.gen_ObsInsp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_perifericos" EntityType="Self.gen_perifericos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_productos" EntityType="Self.gen_productos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_productosgr" EntityType="Self.gen_productosgr" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_programacion" EntityType="Self.gen_programacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_puntorecogidadia" EntityType="Self.gen_puntorecogidadia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_puntosenruta" EntityType="Self.gen_puntosenruta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_PUNTOSRECOGIDA" EntityType="Self.GEN_PUNTOSRECOGIDA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_recogidas" EntityType="Self.gen_recogidas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_recogidasR" EntityType="Self.gen_recogidasR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_RESULTADOQUINOLONAS" EntityType="Self.GEN_RESULTADOQUINOLONAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_resultados" EntityType="Self.gen_resultados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_rutasrecogida" EntityType="Self.gen_rutasrecogida" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_SERIECOORDENADAS" EntityType="Self.GEN_SERIECOORDENADAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_series" EntityType="Self.gen_series" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_TAREASDIARIO" EntityType="Self.GEN_TAREASDIARIO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_TIPOINCIDENCIARUTA" EntityType="Self.GEN_TIPOINCIDENCIARUTA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gen_tiposDocumento" EntityType="Self.Gen_tiposDocumento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_tipouser" EntityType="Self.gen_tipouser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_TIPOVISITA" EntityType="Self.GEN_TIPOVISITA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_trata" EntityType="Self.gen_trata" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_usuarios" EntityType="Self.gen_usuarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_USUARIOSVEHICULO" EntityType="Self.GEN_USUARIOSVEHICULO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_VEHICULO" EntityType="Self.GEN_VEHICULO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_visitas" EntityType="Self.gen_visitas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gen_visitavet" EntityType="Self.gen_visitavet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="master_replica_queue" EntityType="Self.master_replica_queue" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="rl" EntityType="Self.rl" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [rl].[ID] AS [ID], 
+    [rl].[T1] AS [T1], 
+    [rl].[F1] AS [F1], 
+    [rl].[T2] AS [T2], 
+    [rl].[F2] AS [F2], 
+    [rl].[T] AS [T], 
+    [rl].[CND] AS [CND]
+    FROM [dbo].[rl] AS [rl]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LigalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="gen_actionlogs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDSEARCH" Type="Int32" />
+          <Property Name="VE_NUM_IDENTIF" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="VE_NUM_ALIAS" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="VE_PAIS" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="VE_NUM_ALIAS_2" Type="Int32" />
+          <Property Name="VE_TIPO_REGISTRO" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="NEWACTION" Type="Int32" />
+          <Property Name="NOMTABLA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TIPO" Type="Int32" />
+          <Property Name="VI_NUM_IDENTIF_V" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="VI_NUM_IDENTIF_I" Type="String" MaxLength="17" FixedLength="false" Unicode="true" />
+          <Property Name="DO_NUM_IDENTIF_V" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="DO_NUM_IDENTIF_I" Type="String" MaxLength="17" FixedLength="false" Unicode="true" />
+          <Property Name="DO_CLAVE_DOMICILIO" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="MID" Type="Int32" />
+          <Property Name="PB_NUM_NAC_IDEN" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PB_PAIS" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="PB_NUM_IDENTIF" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="PB_NUM_ALIAS" Type="Int32" />
+          <Property Name="PB_TIPO_REGISTRO" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="NTRANSFORM" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="NTRANSFORMSEARCH" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gen_antibioticos">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NomeProducto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Aplicacion" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IDCODLAB" Type="Int32" />
+          <Property Name="CODLAB" Type="Int32" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gen_bolsas">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CODIGOB" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="IDCLIENTE" Type="Int32" />
+          <Property Name="IDMOTIVO" Type="Int32" />
+          <Property Name="FECHASALIDA" Type="DateTime" Precision="3" />
+          <Property Name="FECHAENTREGA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TIPOINFO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="OBSERVACIONES" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="IDSERIE" Type="Int32" />
+          <Property Name="FECHA" Type="DateTime" Precision="3" />
+          <Property Name="IDMONEDA" Type="Int32" />
+          <Property Name="NOMCLIENTE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DIRCLIENTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IDTIPODOC" Type="Int32" />
+          <Property Name="NUMERO" Type="Int32" />
+          <Property Name="NUMCOMPLETO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IDEMPRESA" Type="Int32" />
+          <Property Name="ROWGUID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IDPUNTO" Type="Int32" />
+          <Property Name="EXECUTED" Type="Int32" />
+        </EntityType>
+        <EntityType Name="gen_bolsasrecogida">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDRECOGIDA" Type="Int32" />
+          <Property Name="CODBOLSA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gen_clientes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CODIGOC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NOMBREC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DIRECCION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TELEFONO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MOVIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="POBLACION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PROVINCIA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CPOSTAL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Gen_clientesenpunto">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDCLIENTE" Type="Int32" />
+          <Property Name="IDPUNTO" Type="Int32" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gen_conectargps">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LONGITUD" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="LATITUD" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="RUMBO" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="FGPS" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="HGPS" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="ROWID" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GEN_CONSOLAREPLICA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GEN_CONSOLAVBS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MSG" Type="String" MaxLength="21" FixedLength="false" Unicode="true" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GEN_CONTROLTEMPERATURA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDUSUARIO" Type="Int32" />
+          <Property Name="FECHA" Type="DateTime" Precision="3" />
+          <Property Name="CODPUNTO" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="COORDX" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="COORDY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="POSX" Type="Double" />
+          <Property Name="POSY" Type="Double" />
+          <Property Name="OBSERVA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GEN_COORDENADASGPS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDEMPRESA" Type="Int32" />
+          <Property Name="IDUSUARIO" Type="Int32" />
+          <Property Name="LATITUDGPS" Type="Double" />
+          <Property Name="LONGITUDGPS" Type="Double" />
+          <Property Name="RUMBOGPS" Type="Double" />
+          <Property Name="FECHAHORAGPS" Type="DateTime" Precision="3" />
+          <Property Name="FECHAHORAPDA" Type="DateTime" Precision="3" />
+          <Property Name="OPCIONES" Type="Int32" />
+          <Property Name="OP1" Type="Int32" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="NPUNTO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DISTANCIA" Type="Double" />
+        </EntityType>
+        <EntityType Name="Gen_Correos">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DIRFROM" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DIRTO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CC" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ASUNTO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CUERPO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ENVIADO" Type="Int32" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="SERVER" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ATTACHMENT" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gen_detvisita">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDVISITA" Type="Int32" />
+          <Property Name="IDLABORATORIO" Type="Int32" />
+          <Property Name="IDANTIBIOTICO" Type="Int32" />
+          <Property Name="LACSEC" Type="Boolean" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GEN_DIARIOMATRICULA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDUV" Type="Int32" />
+          <Property Name="FECHA" Type="DateTime" Precision="3" />
+          <Property Name="KMINICIALES" Type="Double" />
+          <Property Name="KMFINALES" Type="Double" />
+          <Property Name="IDTAREA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TAREAS" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gen_Distancia">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CODDIST" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DISTANCIA" Type="Double" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gen_empresa">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDPADRE" Type="Int32" />
+          <Property Name="IDMONEDA" Type="Int32" />
+          <Property Name="CODIGO" Type="Int32" />
+          <Property Name="ETIQUETA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NOMBRE2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NIF" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TIPOVIA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CALLE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NUMERO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ESCALERA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PISO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PUERTA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="POBLACION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PROVINCIA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TELEFONO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FAX" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="URL" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="CUENTACONT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CUENTABANC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RECARGO" Type="Int32" />
+          <Property Name="OPCIONES" Type="Int32" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gen_estados">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SIMBOLO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PROPS" Type="Int32" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gen_globalsearch">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VE_NUM_IDENTIF" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="VE_NUM_ALIAS" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="VE_PAIS" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="VE_NUM_ALIAS_2" Type="Int32" />
+          <Property Name="VE_TIPO_REGISTRO" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="TIPO" Type="Int32" />
+          <Property Name="NOMTABLA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="VI_NUM_IDENTIF_V" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="VI_NUM_IDENTIF_I" Type="String" MaxLength="17" FixedLength="false" Unicode="true" />
+          <Property Name="DO_NUM_IDENTIF_V" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="DO_NUM_IDENTIF_I" Type="String" MaxLength="17" FixedLength="false" Unicode="true" />
+          <Property Name="DO_CLAVE_DOMICILIO" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="PB_NUM_NAC_IDEN" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PB_PAIS" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="PB_NUM_IDENTIF" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="PB_NUM_ALIAS" Type="Int32" />
+          <Property Name="PB_TIPO_REGISTRO" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="NTRANSFORMSEARCH" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="NTRANSFORM" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gen_gradillas">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CODIGOGR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NFRASCOS" Type="Int32" />
+          <Property Name="IDRECOGIDA" Type="Int32" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gen_inicioruta">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="INICIORUTA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IDRUTA" Type="Int32" />
+          <Property Name="HORARUTA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KMINICIO" Type="Double" />
+          <Property Name="KMFIN" Type="Double" />
+          <Property Name="TOTALKM" Type="Double" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="IDUSUARIO" Type="Int32" />
+          <Property Name="ABIERTA" Type="Int32" />
+          <Property Name="FECHA" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="gen_inspecciones">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FechaHoraRegistro" Type="DateTime" Precision="3" />
+          <Property Name="FechaHoraVisita" Type="DateTime" Precision="3" />
+          <Property Name="TipoInspeccion" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Situacion" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="IDUsuario" Type="Int32" />
+          <Property Name="IDMuestraRecogida" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Name="IDExplotacion" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="IDMuestraOrigen" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="FechaMuestraOrigen" Type="DateTime" Precision="3" />
+          <Property Name="FechaAnalisisOrigen" Type="DateTime" Precision="3" />
+          <Property Name="ResultadoCHARM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IDIndustria" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Observaciones" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Informado" Type="Int32" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Actualizado" Type="Int32" />
+          <Property Name="Resultado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaSiguienteVisita" Type="DateTime" Precision="3" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Poblacion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Provincia" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="INDUSTRIAN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IDORIGEN" Type="Int32" />
+          <Property Name="Destrucion" Type="Int32" />
+          <Property Name="NumeroVisita" Type="Int32" />
+          <Property Name="LitrosLeche" Type="Int32" />
+          <Property Name="NumMuxiduras" Type="Int32" />
+          <Property Name="SERIEGANADERO" Type="Int32" />
+          <Property Name="IDOBSERVA" Type="Int32" />
+          <Property Name="MAMITE" Type="Int32" />
+          <Property Name="MAMITESN" Type="Int32" />
+          <Property Name="OUTRAS" Type="Int32" />
+          <Property Name="OUTRASSN" Type="Int32" />
+          <Property Name="PARTO" Type="Int32" />
+          <Property Name="PARTOSN" Type="Int32" />
+          <Property Name="ASOCIACION" Type="Int32" />
+          <Property Name="ASOCIACIONSN" Type="Int32" />
+          <Property Name="EMPDOSIS" Type="Int32" />
+          <Property Name="TRATAINTRAM" Type="Int32" />
+          <Property Name="ORDEMUXI" Type="Int32" />
+          <Property Name="MUXIERRO" Type="Int32" />
+          <Property Name="INCORPORACION" Type="Int32" />
+          <Property Name="NOIDENTIF" Type="Int32" />
+          <Property Name="TRATANIERR" Type="Int32" />
+          <Property Name="ERRCOMUNI" Type="Int32" />
+          <Property Name="NONCAUSA" Type="Int32" />
+          <Property Name="ALGUNTRATA" Type="Int32" />
+          <Property Name="NONCOMPROBAT" Type="Int32" />
+          <Property Name="NONADMINT" Type="Int32" />
+          <Property Name="NONPPOSIBLEE" Type="Int32" />
+          <Property Name="OBSTRATA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="VacasLacta" Type="Int32" />
+          <Property Name="NONDESTRUCION" Type="Int32" />
+          <Property Name="MODIFICADO" Type="Int32" />
+          <Property Name="COORDX" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="COORDY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="POSX" Type="Double" />
+          <Property Name="POSY" Type="Double" />
+          <Property Name="INCORPORACACION" Type="Int32" />
+          <Property Name="NONPOSIBLEE" Type="Int32" />
+          <Property Name="DIRGPS" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="RESULTADOQUINO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SOLICITATEST" Type="Int32" />
+          <Property Name="XONE" Type="Int32" />
+          <Property Name="FOTO1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FOTO2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FOTO3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="VIDEO" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="gen_laboratorios">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDCODLAB" Type="Int32" />
+          <Property Name="CODLAB" Type="Int32" />
+          <Property Name="LABORATORIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gen_monedas">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ETIQUETA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SIMBOLO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CAMBIO" Type="Double" />
+          <Property Name="NDIGITOS" Type="Int32" />
+          <Property Name="FBAJA" Type="DateTime" Precision="3" />
+          <Property Name="BAJA" Type="Int32" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gen_motivos">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gen_observa">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OBSERVA" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gen_ObsInsp">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OBSERVA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gen_perifericos">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDTIPO" Type="Int32" />
+          <Property Name="TEXTO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gen_productos">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CODIGOPRO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PRODUCTO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gen_productosgr">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDPRODUCTO" Type="Int32" />
+          <Property Name="CANTIDAD" Type="Int32" />
+          <Property Name="CTEMPERATURA" Type="Double" />
+          <Property Name="TEMPERATURA" Type="Double" />
+          <Property Name="IDRECOGIDA" Type="Int32" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="IDRECOGIDAN" Type="Int32" />
+        </EntityType>
+        <EntityType Name="gen_programacion">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FECHA" Type="DateTime" Precision="3" />
+          <Property Name="RECOGEDOR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CODPUNTO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="INDUSTRIA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NUM_MUESTRAS" Type="Int32" />
+          <Property Name="OK" Type="Int32" />
+          <Property Name="IDX" Type="Int32" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gen_puntorecogidadia">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDPUNTO" Type="Int32" />
+          <Property Name="FECHA" Type="DateTime" Precision="3" />
+          <Property Name="IDUSUARIO" Type="Int32" />
+          <Property Name="PROGRAMADO" Type="Int32" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="VISITADO" Type="Int32" />
+          <Property Name="HORA" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FOTO1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FOTO2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FOTO3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="VIDEO" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="gen_puntosenruta">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDPUNTO" Type="Int32" />
+          <Property Name="IDRUTA" Type="Int32" />
+          <Property Name="NUMGRADILLAS" Type="Int32" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GEN_PUNTOSRECOGIDA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CODIGOP" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="COORDX" Type="Double" />
+          <Property Name="COORDY" Type="Double" />
+          <Property Name="POSX" Type="Double" />
+          <Property Name="POSY" Type="Double" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="DIRGPS" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="IDUSUARIO" Type="Int32" />
+          <Property Name="IDUSUARIOR" Type="Int32" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="DISTANCIA" Type="Double" />
+        </EntityType>
+        <EntityType Name="gen_recogidas">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDRUTA" Type="Int32" />
+          <Property Name="IDPUNTO" Type="Int32" />
+          <Property Name="IDUSUARIO" Type="Int32" />
+          <Property Name="IDCLIENTE" Type="Int32" />
+          <Property Name="FECHA" Type="DateTime" Precision="3" />
+          <Property Name="HORA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GRADDEJA" Type="Int32" />
+          <Property Name="OBSERVACIONES" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="GRADRECOGE" Type="Int32" />
+          <Property Name="NUMFRASCOS" Type="Int32" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="IDSERIE" Type="Int32" />
+          <Property Name="IDMONEDA" Type="Int32" />
+          <Property Name="NOMCLIENTE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DIRCLIENTE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IDTIPODOC" Type="Int32" />
+          <Property Name="NUMERO" Type="Int32" />
+          <Property Name="NUMCOMPLETO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IDEMPRESA" Type="Int32" />
+          <Property Name="GRESTIMADAS" Type="Int32" />
+          <Property Name="IDMOTIVO" Type="Int32" />
+          <Property Name="FPROGRAMADA" Type="DateTime" Precision="3" />
+          <Property Name="EXECUTED" Type="Int32" />
+          <Property Name="PROGRAMADA" Type="Int32" />
+          <Property Name="IDLIGAL" Type="Int32" />
+          <Property Name="MAIL" Type="Int32" />
+        </EntityType>
+        <EntityType Name="gen_recogidasR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDCLIENTE" Type="Int32" />
+          <Property Name="GRESTIMADAS" Type="Int32" />
+          <Property Name="GRADDEJA" Type="Int32" />
+          <Property Name="GRADRECOGE" Type="Int32" />
+          <Property Name="NUMFRASCOS" Type="Int32" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="IDRECOGIDA" Type="Int32" />
+          <Property Name="IDOBSERVA" Type="Int32" />
+          <Property Name="OBSERVACIONES" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FOTO1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FOTO2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FOTO3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="VIDEO" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="GEN_RESULTADOQUINOLONAS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gen_resultados">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TIPO" Type="Int32" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gen_rutasrecogida">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CODIGOR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FECHA" Type="DateTime" Precision="0" />
+          <Property Name="GRADILLAS" Type="Int32" />
+          <Property Name="IDUSUARIO" Type="Int32" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GEN_SERIECOORDENADAS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SERIEGAN" Type="Int32" />
+          <Property Name="FECHA" Type="DateTime" Precision="3" />
+          <Property Name="COORDX" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="COORDY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="DIRGPS" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="XONE" Type="Int32" />
+        </EntityType>
+        <EntityType Name="gen_series">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SERIE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PREFIJO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SUFIJO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SIGNO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IDEMPRESA" Type="Int32" />
+          <Property Name="PRIMERO" Type="Int32" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GEN_TAREASDIARIO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Gen_tiposDocumento">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SIMBOLO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="REPORTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OPCIONES" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PLANTILLA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LINEAS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ENCABEZADO" Type="Int32" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gen_tipouser">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CODIGO" Type="Int32" />
+          <Property Name="ETIQUETA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DERECHOS" Type="Int32" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GEN_TIPOVISITA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TIPOVISITA" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gen_trata">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDINSP" Type="Int32" />
+          <Property Name="FECHAT" Type="DateTime" Precision="3" />
+          <Property Name="IDTRATA" Type="Int32" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gen_usuarios">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDEMPRESA" Type="Int32" />
+          <Property Name="IDTIPO" Type="Int32" />
+          <Property Name="LOGIN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PWD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NOMBRE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="APELLIDO1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="APELLIDO2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DERECHOS" Type="Int32" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="CODIGO" Type="Int32" />
+          <Property Name="USERTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GEN_USUARIOSVEHICULO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDUSUARIO" Type="Int32" />
+          <Property Name="IDMATRICULA" Type="Int32" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GEN_VEHICULO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MATRICULA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MODELO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ANHOCOMPRA" Type="DateTime" Precision="3" />
+          <Property Name="TIPOCOMBUSTIBLE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gen_visitas">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DATAFICHA" Type="DateTime" Precision="3" />
+          <Property Name="GANDEIRO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SERIE" Type="Int32" />
+          <Property Name="DATAMOSTRA" Type="DateTime" Precision="3" />
+          <Property Name="RESULTADO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NUMVACAS" Type="Int32" />
+          <Property Name="LITROSLEITE" Type="Int32" />
+          <Property Name="RESULTADOCHARM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MAMITES" Type="Boolean" />
+          <Property Name="PRESCRIPCION" Type="Boolean" />
+          <Property Name="REXTRATAMENTO" Type="Boolean" />
+          <Property Name="RECEITAS" Type="Boolean" />
+          <Property Name="ALMACENAMED" Type="Boolean" />
+          <Property Name="TEMPESPMAL" Type="Boolean" />
+          <Property Name="TEMPESPINCUMP" Type="Boolean" />
+          <Property Name="TEMPESPAXUST" Type="Boolean" />
+          <Property Name="TARTASECFORA" Type="Boolean" />
+          <Property Name="OUTROSMEDIC" Type="Boolean" />
+          <Property Name="TRATAINTRAMAMA" Type="Boolean" />
+          <Property Name="ORDMUXINCORREC" Type="Boolean" />
+          <Property Name="UTILMEDINADEC" Type="Boolean" />
+          <Property Name="ANIMALNOVO" Type="Boolean" />
+          <Property Name="OUTROS" Type="Boolean" />
+          <Property Name="OBSERVA" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ACTUALIZADO" Type="Int32" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gen_visitavet">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDUSUARIO" Type="Int32" />
+          <Property Name="FECHA" Type="DateTime" Precision="3" />
+          <Property Name="SERIEGAN" Type="Int32" />
+          <Property Name="COORDX" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="COORDY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="POSX" Type="Double" />
+          <Property Name="POSY" Type="Double" />
+          <Property Name="OBSERVA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ACTUALIZADO" Type="Int32" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="PRECISION" Type="Double" />
+          <Property Name="FOTO1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FOTO2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FOTO3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="VIDEO" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="master_replica_queue">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ROWID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OPERID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TIMESTAMP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OPER" Type="Int32" />
+          <Property Name="MID" Type="Int32" />
+          <Property Name="SQL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DMID" Type="Int32" />
+          <Property Name="CONDITIONAL" Type="Int32" />
+          <Property Name="TBL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DMIDPR" Type="Int32" />
+          <Property Name="DISABLED" Type="Int32" />
+          <Property Name="BATCHSIZE" Type="Int32" />
+          <Property Name="RCVTIMESTAMP" Type="DateTime" Precision="3" />
+          <Property Name="PRTIMESTAMP" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="rl">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="T1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="F1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="T2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="F2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="T" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CND" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="LigalEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="gen_actionlogs" EntityType="Self.gen_actionlogs" />
+          <EntitySet Name="gen_antibioticos" EntityType="Self.gen_antibioticos" />
+          <EntitySet Name="gen_bolsas" EntityType="Self.gen_bolsas" />
+          <EntitySet Name="gen_bolsasrecogida" EntityType="Self.gen_bolsasrecogida" />
+          <EntitySet Name="gen_clientes" EntityType="Self.gen_clientes" />
+          <EntitySet Name="Gen_clientesenpunto" EntityType="Self.Gen_clientesenpunto" />
+          <EntitySet Name="gen_conectargps" EntityType="Self.gen_conectargps" />
+          <EntitySet Name="GEN_CONSOLAREPLICA" EntityType="Self.GEN_CONSOLAREPLICA" />
+          <EntitySet Name="GEN_CONSOLAVBS" EntityType="Self.GEN_CONSOLAVBS" />
+          <EntitySet Name="GEN_CONTROLTEMPERATURA" EntityType="Self.GEN_CONTROLTEMPERATURA" />
+          <EntitySet Name="GEN_COORDENADASGPS" EntityType="Self.GEN_COORDENADASGPS" />
+          <EntitySet Name="Gen_Correos" EntityType="Self.Gen_Correos" />
+          <EntitySet Name="gen_detvisita" EntityType="Self.gen_detvisita" />
+          <EntitySet Name="GEN_DIARIOMATRICULA" EntityType="Self.GEN_DIARIOMATRICULA" />
+          <EntitySet Name="gen_Distancia" EntityType="Self.gen_Distancia" />
+          <EntitySet Name="gen_empresa" EntityType="Self.gen_empresa" />
+          <EntitySet Name="gen_estados" EntityType="Self.gen_estados" />
+          <EntitySet Name="gen_globalsearch" EntityType="Self.gen_globalsearch" />
+          <EntitySet Name="gen_gradillas" EntityType="Self.gen_gradillas" />
+          <EntitySet Name="gen_inicioruta" EntityType="Self.gen_inicioruta" />
+          <EntitySet Name="gen_inspecciones" EntityType="Self.gen_inspecciones" />
+          <EntitySet Name="gen_laboratorios" EntityType="Self.gen_laboratorios" />
+          <EntitySet Name="gen_monedas" EntityType="Self.gen_monedas" />
+          <EntitySet Name="gen_motivos" EntityType="Self.gen_motivos" />
+          <EntitySet Name="gen_observa" EntityType="Self.gen_observa" />
+          <EntitySet Name="gen_ObsInsp" EntityType="Self.gen_ObsInsp" />
+          <EntitySet Name="gen_perifericos" EntityType="Self.gen_perifericos" />
+          <EntitySet Name="gen_productos" EntityType="Self.gen_productos" />
+          <EntitySet Name="gen_productosgr" EntityType="Self.gen_productosgr" />
+          <EntitySet Name="gen_programacion" EntityType="Self.gen_programacion" />
+          <EntitySet Name="gen_puntorecogidadia" EntityType="Self.gen_puntorecogidadia" />
+          <EntitySet Name="gen_puntosenruta" EntityType="Self.gen_puntosenruta" />
+          <EntitySet Name="GEN_PUNTOSRECOGIDA" EntityType="Self.GEN_PUNTOSRECOGIDA" />
+          <EntitySet Name="gen_recogidas" EntityType="Self.gen_recogidas" />
+          <EntitySet Name="gen_recogidasR" EntityType="Self.gen_recogidasR" />
+          <EntitySet Name="GEN_RESULTADOQUINOLONAS" EntityType="Self.GEN_RESULTADOQUINOLONAS" />
+          <EntitySet Name="gen_resultados" EntityType="Self.gen_resultados" />
+          <EntitySet Name="gen_rutasrecogida" EntityType="Self.gen_rutasrecogida" />
+          <EntitySet Name="GEN_SERIECOORDENADAS" EntityType="Self.GEN_SERIECOORDENADAS" />
+          <EntitySet Name="gen_series" EntityType="Self.gen_series" />
+          <EntitySet Name="GEN_TAREASDIARIO" EntityType="Self.GEN_TAREASDIARIO" />
+          <EntitySet Name="Gen_tiposDocumento" EntityType="Self.Gen_tiposDocumento" />
+          <EntitySet Name="gen_tipouser" EntityType="Self.gen_tipouser" />
+          <EntitySet Name="GEN_TIPOVISITA" EntityType="Self.GEN_TIPOVISITA" />
+          <EntitySet Name="gen_trata" EntityType="Self.gen_trata" />
+          <EntitySet Name="gen_usuarios" EntityType="Self.gen_usuarios" />
+          <EntitySet Name="GEN_USUARIOSVEHICULO" EntityType="Self.GEN_USUARIOSVEHICULO" />
+          <EntitySet Name="GEN_VEHICULO" EntityType="Self.GEN_VEHICULO" />
+          <EntitySet Name="gen_visitas" EntityType="Self.gen_visitas" />
+          <EntitySet Name="gen_visitavet" EntityType="Self.gen_visitavet" />
+          <EntitySet Name="master_replica_queue" EntityType="Self.master_replica_queue" />
+          <EntitySet Name="rl" EntityType="Self.rl" />
+          <EntitySet Name="GEN_TIPOINCIDENCIARUTA" EntityType="LigalModel.GEN_TIPOINCIDENCIARUTA" />
+        </EntityContainer>
+        <EntityType Name="GEN_TIPOINCIDENCIARUTA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="INCIDENCIA" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LigalModelStoreContainer" CdmEntityContainer="LigalEntities1">
+          <EntitySetMapping Name="gen_actionlogs">
+            <EntityTypeMapping TypeName="LigalModel.gen_actionlogs">
+              <MappingFragment StoreEntitySet="gen_actionlogs">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDSEARCH" ColumnName="IDSEARCH" />
+                <ScalarProperty Name="VE_NUM_IDENTIF" ColumnName="VE_NUM_IDENTIF" />
+                <ScalarProperty Name="VE_NUM_ALIAS" ColumnName="VE_NUM_ALIAS" />
+                <ScalarProperty Name="VE_PAIS" ColumnName="VE_PAIS" />
+                <ScalarProperty Name="VE_NUM_ALIAS_2" ColumnName="VE_NUM_ALIAS_2" />
+                <ScalarProperty Name="VE_TIPO_REGISTRO" ColumnName="VE_TIPO_REGISTRO" />
+                <ScalarProperty Name="NEWACTION" ColumnName="NEWACTION" />
+                <ScalarProperty Name="NOMTABLA" ColumnName="NOMTABLA" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+                <ScalarProperty Name="VI_NUM_IDENTIF_V" ColumnName="VI_NUM_IDENTIF_V" />
+                <ScalarProperty Name="VI_NUM_IDENTIF_I" ColumnName="VI_NUM_IDENTIF_I" />
+                <ScalarProperty Name="DO_NUM_IDENTIF_V" ColumnName="DO_NUM_IDENTIF_V" />
+                <ScalarProperty Name="DO_NUM_IDENTIF_I" ColumnName="DO_NUM_IDENTIF_I" />
+                <ScalarProperty Name="DO_CLAVE_DOMICILIO" ColumnName="DO_CLAVE_DOMICILIO" />
+                <ScalarProperty Name="MID" ColumnName="MID" />
+                <ScalarProperty Name="PB_NUM_NAC_IDEN" ColumnName="PB_NUM_NAC_IDEN" />
+                <ScalarProperty Name="PB_PAIS" ColumnName="PB_PAIS" />
+                <ScalarProperty Name="PB_NUM_IDENTIF" ColumnName="PB_NUM_IDENTIF" />
+                <ScalarProperty Name="PB_NUM_ALIAS" ColumnName="PB_NUM_ALIAS" />
+                <ScalarProperty Name="PB_TIPO_REGISTRO" ColumnName="PB_TIPO_REGISTRO" />
+                <ScalarProperty Name="NTRANSFORM" ColumnName="NTRANSFORM" />
+                <ScalarProperty Name="NTRANSFORMSEARCH" ColumnName="NTRANSFORMSEARCH" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_antibioticos">
+            <EntityTypeMapping TypeName="LigalModel.gen_antibioticos">
+              <MappingFragment StoreEntitySet="gen_antibioticos">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NomeProducto" ColumnName="NomeProducto" />
+                <ScalarProperty Name="Aplicacion" ColumnName="Aplicacion" />
+                <ScalarProperty Name="IDCODLAB" ColumnName="IDCODLAB" />
+                <ScalarProperty Name="CODLAB" ColumnName="CODLAB" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_bolsas">
+            <EntityTypeMapping TypeName="LigalModel.gen_bolsas">
+              <MappingFragment StoreEntitySet="gen_bolsas">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CODIGOB" ColumnName="CODIGOB" />
+                <ScalarProperty Name="IDCLIENTE" ColumnName="IDCLIENTE" />
+                <ScalarProperty Name="IDMOTIVO" ColumnName="IDMOTIVO" />
+                <ScalarProperty Name="FECHASALIDA" ColumnName="FECHASALIDA" />
+                <ScalarProperty Name="FECHAENTREGA" ColumnName="FECHAENTREGA" />
+                <ScalarProperty Name="TIPOINFO" ColumnName="TIPOINFO" />
+                <ScalarProperty Name="OBSERVACIONES" ColumnName="OBSERVACIONES" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="IDSERIE" ColumnName="IDSERIE" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="IDMONEDA" ColumnName="IDMONEDA" />
+                <ScalarProperty Name="NOMCLIENTE" ColumnName="NOMCLIENTE" />
+                <ScalarProperty Name="DIRCLIENTE" ColumnName="DIRCLIENTE" />
+                <ScalarProperty Name="IDTIPODOC" ColumnName="IDTIPODOC" />
+                <ScalarProperty Name="NUMERO" ColumnName="NUMERO" />
+                <ScalarProperty Name="NUMCOMPLETO" ColumnName="NUMCOMPLETO" />
+                <ScalarProperty Name="IDEMPRESA" ColumnName="IDEMPRESA" />
+                <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+                <ScalarProperty Name="IDPUNTO" ColumnName="IDPUNTO" />
+                <ScalarProperty Name="EXECUTED" ColumnName="EXECUTED" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_bolsasrecogida">
+            <EntityTypeMapping TypeName="LigalModel.gen_bolsasrecogida">
+              <MappingFragment StoreEntitySet="gen_bolsasrecogida">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDRECOGIDA" ColumnName="IDRECOGIDA" />
+                <ScalarProperty Name="CODBOLSA" ColumnName="CODBOLSA" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_clientes">
+            <EntityTypeMapping TypeName="LigalModel.gen_clientes">
+              <MappingFragment StoreEntitySet="gen_clientes">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CODIGOC" ColumnName="CODIGOC" />
+                <ScalarProperty Name="NOMBREC" ColumnName="NOMBREC" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="MOVIL" ColumnName="MOVIL" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="POBLACION" ColumnName="POBLACION" />
+                <ScalarProperty Name="PROVINCIA" ColumnName="PROVINCIA" />
+                <ScalarProperty Name="CPOSTAL" ColumnName="CPOSTAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gen_clientesenpunto">
+            <EntityTypeMapping TypeName="LigalModel.Gen_clientesenpunto">
+              <MappingFragment StoreEntitySet="Gen_clientesenpunto">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDCLIENTE" ColumnName="IDCLIENTE" />
+                <ScalarProperty Name="IDPUNTO" ColumnName="IDPUNTO" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_conectargps">
+            <EntityTypeMapping TypeName="LigalModel.gen_conectargps">
+              <MappingFragment StoreEntitySet="gen_conectargps">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LONGITUD" ColumnName="LONGITUD" />
+                <ScalarProperty Name="LATITUD" ColumnName="LATITUD" />
+                <ScalarProperty Name="RUMBO" ColumnName="RUMBO" />
+                <ScalarProperty Name="FGPS" ColumnName="FGPS" />
+                <ScalarProperty Name="HGPS" ColumnName="HGPS" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_CONSOLAREPLICA">
+            <EntityTypeMapping TypeName="LigalModel.GEN_CONSOLAREPLICA">
+              <MappingFragment StoreEntitySet="GEN_CONSOLAREPLICA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_CONSOLAVBS">
+            <EntityTypeMapping TypeName="LigalModel.GEN_CONSOLAVBS">
+              <MappingFragment StoreEntitySet="GEN_CONSOLAVBS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MSG" ColumnName="MSG" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_CONTROLTEMPERATURA">
+            <EntityTypeMapping TypeName="LigalModel.GEN_CONTROLTEMPERATURA">
+              <MappingFragment StoreEntitySet="GEN_CONTROLTEMPERATURA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="CODPUNTO" ColumnName="CODPUNTO" />
+                <ScalarProperty Name="COORDX" ColumnName="COORDX" />
+                <ScalarProperty Name="COORDY" ColumnName="COORDY" />
+                <ScalarProperty Name="POSX" ColumnName="POSX" />
+                <ScalarProperty Name="POSY" ColumnName="POSY" />
+                <ScalarProperty Name="OBSERVA" ColumnName="OBSERVA" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_COORDENADASGPS">
+            <EntityTypeMapping TypeName="LigalModel.GEN_COORDENADASGPS">
+              <MappingFragment StoreEntitySet="GEN_COORDENADASGPS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDEMPRESA" ColumnName="IDEMPRESA" />
+                <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+                <ScalarProperty Name="LATITUDGPS" ColumnName="LATITUDGPS" />
+                <ScalarProperty Name="LONGITUDGPS" ColumnName="LONGITUDGPS" />
+                <ScalarProperty Name="RUMBOGPS" ColumnName="RUMBOGPS" />
+                <ScalarProperty Name="FECHAHORAGPS" ColumnName="FECHAHORAGPS" />
+                <ScalarProperty Name="FECHAHORAPDA" ColumnName="FECHAHORAPDA" />
+                <ScalarProperty Name="OPCIONES" ColumnName="OPCIONES" />
+                <ScalarProperty Name="OP1" ColumnName="OP1" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="NPUNTO" ColumnName="NPUNTO" />
+                <ScalarProperty Name="DISTANCIA" ColumnName="DISTANCIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gen_Correos">
+            <EntityTypeMapping TypeName="LigalModel.Gen_Correos">
+              <MappingFragment StoreEntitySet="Gen_Correos">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DIRFROM" ColumnName="DIRFROM" />
+                <ScalarProperty Name="DIRTO" ColumnName="DIRTO" />
+                <ScalarProperty Name="CC" ColumnName="CC" />
+                <ScalarProperty Name="ASUNTO" ColumnName="ASUNTO" />
+                <ScalarProperty Name="CUERPO" ColumnName="CUERPO" />
+                <ScalarProperty Name="ENVIADO" ColumnName="ENVIADO" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="SERVER" ColumnName="SERVER" />
+                <ScalarProperty Name="ATTACHMENT" ColumnName="ATTACHMENT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_detvisita">
+            <EntityTypeMapping TypeName="LigalModel.gen_detvisita">
+              <MappingFragment StoreEntitySet="gen_detvisita">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDVISITA" ColumnName="IDVISITA" />
+                <ScalarProperty Name="IDLABORATORIO" ColumnName="IDLABORATORIO" />
+                <ScalarProperty Name="IDANTIBIOTICO" ColumnName="IDANTIBIOTICO" />
+                <ScalarProperty Name="LACSEC" ColumnName="LACSEC" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_DIARIOMATRICULA">
+            <EntityTypeMapping TypeName="LigalModel.GEN_DIARIOMATRICULA">
+              <MappingFragment StoreEntitySet="GEN_DIARIOMATRICULA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDUV" ColumnName="IDUV" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="KMINICIALES" ColumnName="KMINICIALES" />
+                <ScalarProperty Name="KMFINALES" ColumnName="KMFINALES" />
+                <ScalarProperty Name="IDTAREA" ColumnName="IDTAREA" />
+                <ScalarProperty Name="TAREAS" ColumnName="TAREAS" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_Distancia">
+            <EntityTypeMapping TypeName="LigalModel.gen_Distancia">
+              <MappingFragment StoreEntitySet="gen_Distancia">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CODDIST" ColumnName="CODDIST" />
+                <ScalarProperty Name="DISTANCIA" ColumnName="DISTANCIA" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_empresa">
+            <EntityTypeMapping TypeName="LigalModel.gen_empresa">
+              <MappingFragment StoreEntitySet="gen_empresa">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDPADRE" ColumnName="IDPADRE" />
+                <ScalarProperty Name="IDMONEDA" ColumnName="IDMONEDA" />
+                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+                <ScalarProperty Name="ETIQUETA" ColumnName="ETIQUETA" />
+                <ScalarProperty Name="NOMBRE2" ColumnName="NOMBRE2" />
+                <ScalarProperty Name="NIF" ColumnName="NIF" />
+                <ScalarProperty Name="TIPOVIA" ColumnName="TIPOVIA" />
+                <ScalarProperty Name="CALLE" ColumnName="CALLE" />
+                <ScalarProperty Name="NUMERO" ColumnName="NUMERO" />
+                <ScalarProperty Name="ESCALERA" ColumnName="ESCALERA" />
+                <ScalarProperty Name="PISO" ColumnName="PISO" />
+                <ScalarProperty Name="PUERTA" ColumnName="PUERTA" />
+                <ScalarProperty Name="POBLACION" ColumnName="POBLACION" />
+                <ScalarProperty Name="CP" ColumnName="CP" />
+                <ScalarProperty Name="PROVINCIA" ColumnName="PROVINCIA" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="FAX" ColumnName="FAX" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="CUENTACONT" ColumnName="CUENTACONT" />
+                <ScalarProperty Name="CUENTABANC" ColumnName="CUENTABANC" />
+                <ScalarProperty Name="RECARGO" ColumnName="RECARGO" />
+                <ScalarProperty Name="OPCIONES" ColumnName="OPCIONES" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_estados">
+            <EntityTypeMapping TypeName="LigalModel.gen_estados">
+              <MappingFragment StoreEntitySet="gen_estados">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="SIMBOLO" ColumnName="SIMBOLO" />
+                <ScalarProperty Name="PROPS" ColumnName="PROPS" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_globalsearch">
+            <EntityTypeMapping TypeName="LigalModel.gen_globalsearch">
+              <MappingFragment StoreEntitySet="gen_globalsearch">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="VE_NUM_IDENTIF" ColumnName="VE_NUM_IDENTIF" />
+                <ScalarProperty Name="VE_NUM_ALIAS" ColumnName="VE_NUM_ALIAS" />
+                <ScalarProperty Name="VE_PAIS" ColumnName="VE_PAIS" />
+                <ScalarProperty Name="VE_NUM_ALIAS_2" ColumnName="VE_NUM_ALIAS_2" />
+                <ScalarProperty Name="VE_TIPO_REGISTRO" ColumnName="VE_TIPO_REGISTRO" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+                <ScalarProperty Name="NOMTABLA" ColumnName="NOMTABLA" />
+                <ScalarProperty Name="VI_NUM_IDENTIF_V" ColumnName="VI_NUM_IDENTIF_V" />
+                <ScalarProperty Name="VI_NUM_IDENTIF_I" ColumnName="VI_NUM_IDENTIF_I" />
+                <ScalarProperty Name="DO_NUM_IDENTIF_V" ColumnName="DO_NUM_IDENTIF_V" />
+                <ScalarProperty Name="DO_NUM_IDENTIF_I" ColumnName="DO_NUM_IDENTIF_I" />
+                <ScalarProperty Name="DO_CLAVE_DOMICILIO" ColumnName="DO_CLAVE_DOMICILIO" />
+                <ScalarProperty Name="PB_NUM_NAC_IDEN" ColumnName="PB_NUM_NAC_IDEN" />
+                <ScalarProperty Name="PB_PAIS" ColumnName="PB_PAIS" />
+                <ScalarProperty Name="PB_NUM_IDENTIF" ColumnName="PB_NUM_IDENTIF" />
+                <ScalarProperty Name="PB_NUM_ALIAS" ColumnName="PB_NUM_ALIAS" />
+                <ScalarProperty Name="PB_TIPO_REGISTRO" ColumnName="PB_TIPO_REGISTRO" />
+                <ScalarProperty Name="NTRANSFORMSEARCH" ColumnName="NTRANSFORMSEARCH" />
+                <ScalarProperty Name="NTRANSFORM" ColumnName="NTRANSFORM" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_gradillas">
+            <EntityTypeMapping TypeName="LigalModel.gen_gradillas">
+              <MappingFragment StoreEntitySet="gen_gradillas">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CODIGOGR" ColumnName="CODIGOGR" />
+                <ScalarProperty Name="NFRASCOS" ColumnName="NFRASCOS" />
+                <ScalarProperty Name="IDRECOGIDA" ColumnName="IDRECOGIDA" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_inicioruta">
+            <EntityTypeMapping TypeName="LigalModel.gen_inicioruta">
+              <MappingFragment StoreEntitySet="gen_inicioruta">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="INICIORUTA" ColumnName="INICIORUTA" />
+                <ScalarProperty Name="IDRUTA" ColumnName="IDRUTA" />
+                <ScalarProperty Name="HORARUTA" ColumnName="HORARUTA" />
+                <ScalarProperty Name="KMINICIO" ColumnName="KMINICIO" />
+                <ScalarProperty Name="KMFIN" ColumnName="KMFIN" />
+                <ScalarProperty Name="TOTALKM" ColumnName="TOTALKM" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+                <ScalarProperty Name="ABIERTA" ColumnName="ABIERTA" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_inspecciones">
+            <EntityTypeMapping TypeName="LigalModel.gen_inspecciones">
+              <MappingFragment StoreEntitySet="gen_inspecciones">
+                <ScalarProperty Name="VIDEO" ColumnName="VIDEO" />
+                <ScalarProperty Name="FOTO3" ColumnName="FOTO3" />
+                <ScalarProperty Name="FOTO2" ColumnName="FOTO2" />
+                <ScalarProperty Name="FOTO1" ColumnName="FOTO1" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FechaHoraRegistro" ColumnName="FechaHoraRegistro" />
+                <ScalarProperty Name="FechaHoraVisita" ColumnName="FechaHoraVisita" />
+                <ScalarProperty Name="TipoInspeccion" ColumnName="TipoInspeccion" />
+                <ScalarProperty Name="Situacion" ColumnName="Situacion" />
+                <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+                <ScalarProperty Name="IDMuestraRecogida" ColumnName="IDMuestraRecogida" />
+                <ScalarProperty Name="IDExplotacion" ColumnName="IDExplotacion" />
+                <ScalarProperty Name="IDMuestraOrigen" ColumnName="IDMuestraOrigen" />
+                <ScalarProperty Name="FechaMuestraOrigen" ColumnName="FechaMuestraOrigen" />
+                <ScalarProperty Name="FechaAnalisisOrigen" ColumnName="FechaAnalisisOrigen" />
+                <ScalarProperty Name="ResultadoCHARM" ColumnName="ResultadoCHARM" />
+                <ScalarProperty Name="IDIndustria" ColumnName="IDIndustria" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="Informado" ColumnName="Informado" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="Actualizado" ColumnName="Actualizado" />
+                <ScalarProperty Name="Resultado" ColumnName="Resultado" />
+                <ScalarProperty Name="FechaSiguienteVisita" ColumnName="FechaSiguienteVisita" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Poblacion" ColumnName="Poblacion" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="Telefono1" ColumnName="Telefono1" />
+                <ScalarProperty Name="Telefono2" ColumnName="Telefono2" />
+                <ScalarProperty Name="INDUSTRIAN" ColumnName="INDUSTRIAN" />
+                <ScalarProperty Name="IDORIGEN" ColumnName="IDORIGEN" />
+                <ScalarProperty Name="Destrucion" ColumnName="Destrucion" />
+                <ScalarProperty Name="NumeroVisita" ColumnName="NumeroVisita" />
+                <ScalarProperty Name="LitrosLeche" ColumnName="LitrosLeche" />
+                <ScalarProperty Name="NumMuxiduras" ColumnName="NumMuxiduras" />
+                <ScalarProperty Name="SERIEGANADERO" ColumnName="SERIEGANADERO" />
+                <ScalarProperty Name="IDOBSERVA" ColumnName="IDOBSERVA" />
+                <ScalarProperty Name="MAMITE" ColumnName="MAMITE" />
+                <ScalarProperty Name="MAMITESN" ColumnName="MAMITESN" />
+                <ScalarProperty Name="OUTRAS" ColumnName="OUTRAS" />
+                <ScalarProperty Name="OUTRASSN" ColumnName="OUTRASSN" />
+                <ScalarProperty Name="PARTO" ColumnName="PARTO" />
+                <ScalarProperty Name="PARTOSN" ColumnName="PARTOSN" />
+                <ScalarProperty Name="ASOCIACION" ColumnName="ASOCIACION" />
+                <ScalarProperty Name="ASOCIACIONSN" ColumnName="ASOCIACIONSN" />
+                <ScalarProperty Name="EMPDOSIS" ColumnName="EMPDOSIS" />
+                <ScalarProperty Name="TRATAINTRAM" ColumnName="TRATAINTRAM" />
+                <ScalarProperty Name="ORDEMUXI" ColumnName="ORDEMUXI" />
+                <ScalarProperty Name="MUXIERRO" ColumnName="MUXIERRO" />
+                <ScalarProperty Name="INCORPORACION" ColumnName="INCORPORACION" />
+                <ScalarProperty Name="NOIDENTIF" ColumnName="NOIDENTIF" />
+                <ScalarProperty Name="TRATANIERR" ColumnName="TRATANIERR" />
+                <ScalarProperty Name="ERRCOMUNI" ColumnName="ERRCOMUNI" />
+                <ScalarProperty Name="NONCAUSA" ColumnName="NONCAUSA" />
+                <ScalarProperty Name="ALGUNTRATA" ColumnName="ALGUNTRATA" />
+                <ScalarProperty Name="NONCOMPROBAT" ColumnName="NONCOMPROBAT" />
+                <ScalarProperty Name="NONADMINT" ColumnName="NONADMINT" />
+                <ScalarProperty Name="NONPPOSIBLEE" ColumnName="NONPPOSIBLEE" />
+                <ScalarProperty Name="OBSTRATA" ColumnName="OBSTRATA" />
+                <ScalarProperty Name="VacasLacta" ColumnName="VacasLacta" />
+                <ScalarProperty Name="NONDESTRUCION" ColumnName="NONDESTRUCION" />
+                <ScalarProperty Name="MODIFICADO" ColumnName="MODIFICADO" />
+                <ScalarProperty Name="COORDX" ColumnName="COORDX" />
+                <ScalarProperty Name="COORDY" ColumnName="COORDY" />
+                <ScalarProperty Name="POSX" ColumnName="POSX" />
+                <ScalarProperty Name="POSY" ColumnName="POSY" />
+                <ScalarProperty Name="INCORPORACACION" ColumnName="INCORPORACACION" />
+                <ScalarProperty Name="NONPOSIBLEE" ColumnName="NONPOSIBLEE" />
+                <ScalarProperty Name="DIRGPS" ColumnName="DIRGPS" />
+                <ScalarProperty Name="RESULTADOQUINO" ColumnName="RESULTADOQUINO" />
+                <ScalarProperty Name="SOLICITATEST" ColumnName="SOLICITATEST" />
+                <ScalarProperty Name="XONE" ColumnName="XONE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_laboratorios">
+            <EntityTypeMapping TypeName="LigalModel.gen_laboratorios">
+              <MappingFragment StoreEntitySet="gen_laboratorios">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDCODLAB" ColumnName="IDCODLAB" />
+                <ScalarProperty Name="CODLAB" ColumnName="CODLAB" />
+                <ScalarProperty Name="LABORATORIO" ColumnName="LABORATORIO" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_monedas">
+            <EntityTypeMapping TypeName="LigalModel.gen_monedas">
+              <MappingFragment StoreEntitySet="gen_monedas">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ETIQUETA" ColumnName="ETIQUETA" />
+                <ScalarProperty Name="SIMBOLO" ColumnName="SIMBOLO" />
+                <ScalarProperty Name="CAMBIO" ColumnName="CAMBIO" />
+                <ScalarProperty Name="NDIGITOS" ColumnName="NDIGITOS" />
+                <ScalarProperty Name="FBAJA" ColumnName="FBAJA" />
+                <ScalarProperty Name="BAJA" ColumnName="BAJA" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_motivos">
+            <EntityTypeMapping TypeName="LigalModel.gen_motivos">
+              <MappingFragment StoreEntitySet="gen_motivos">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_observa">
+            <EntityTypeMapping TypeName="LigalModel.gen_observa">
+              <MappingFragment StoreEntitySet="gen_observa">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OBSERVA" ColumnName="OBSERVA" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_ObsInsp">
+            <EntityTypeMapping TypeName="LigalModel.gen_ObsInsp">
+              <MappingFragment StoreEntitySet="gen_ObsInsp">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OBSERVA" ColumnName="OBSERVA" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_perifericos">
+            <EntityTypeMapping TypeName="LigalModel.gen_perifericos">
+              <MappingFragment StoreEntitySet="gen_perifericos">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDTIPO" ColumnName="IDTIPO" />
+                <ScalarProperty Name="TEXTO" ColumnName="TEXTO" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_productos">
+            <EntityTypeMapping TypeName="LigalModel.gen_productos">
+              <MappingFragment StoreEntitySet="gen_productos">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CODIGOPRO" ColumnName="CODIGOPRO" />
+                <ScalarProperty Name="PRODUCTO" ColumnName="PRODUCTO" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_productosgr">
+            <EntityTypeMapping TypeName="LigalModel.gen_productosgr">
+              <MappingFragment StoreEntitySet="gen_productosgr">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDPRODUCTO" ColumnName="IDPRODUCTO" />
+                <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+                <ScalarProperty Name="CTEMPERATURA" ColumnName="CTEMPERATURA" />
+                <ScalarProperty Name="TEMPERATURA" ColumnName="TEMPERATURA" />
+                <ScalarProperty Name="IDRECOGIDA" ColumnName="IDRECOGIDA" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="IDRECOGIDAN" ColumnName="IDRECOGIDAN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_programacion">
+            <EntityTypeMapping TypeName="LigalModel.gen_programacion">
+              <MappingFragment StoreEntitySet="gen_programacion">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="RECOGEDOR" ColumnName="RECOGEDOR" />
+                <ScalarProperty Name="CODPUNTO" ColumnName="CODPUNTO" />
+                <ScalarProperty Name="INDUSTRIA" ColumnName="INDUSTRIA" />
+                <ScalarProperty Name="NUM_MUESTRAS" ColumnName="NUM_MUESTRAS" />
+                <ScalarProperty Name="OK" ColumnName="OK" />
+                <ScalarProperty Name="IDX" ColumnName="IDX" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_puntorecogidadia">
+            <EntityTypeMapping TypeName="LigalModel.gen_puntorecogidadia">
+              <MappingFragment StoreEntitySet="gen_puntorecogidadia">
+                <ScalarProperty Name="VIDEO" ColumnName="VIDEO" />
+                <ScalarProperty Name="FOTO3" ColumnName="FOTO3" />
+                <ScalarProperty Name="FOTO2" ColumnName="FOTO2" />
+                <ScalarProperty Name="FOTO1" ColumnName="FOTO1" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDPUNTO" ColumnName="IDPUNTO" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+                <ScalarProperty Name="PROGRAMADO" ColumnName="PROGRAMADO" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="VISITADO" ColumnName="VISITADO" />
+                <ScalarProperty Name="HORA" ColumnName="HORA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_puntosenruta">
+            <EntityTypeMapping TypeName="LigalModel.gen_puntosenruta">
+              <MappingFragment StoreEntitySet="gen_puntosenruta">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDPUNTO" ColumnName="IDPUNTO" />
+                <ScalarProperty Name="IDRUTA" ColumnName="IDRUTA" />
+                <ScalarProperty Name="NUMGRADILLAS" ColumnName="NUMGRADILLAS" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_PUNTOSRECOGIDA">
+            <EntityTypeMapping TypeName="LigalModel.GEN_PUNTOSRECOGIDA">
+              <MappingFragment StoreEntitySet="GEN_PUNTOSRECOGIDA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CODIGOP" ColumnName="CODIGOP" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="COORDX" ColumnName="COORDX" />
+                <ScalarProperty Name="COORDY" ColumnName="COORDY" />
+                <ScalarProperty Name="POSX" ColumnName="POSX" />
+                <ScalarProperty Name="POSY" ColumnName="POSY" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="DIRGPS" ColumnName="DIRGPS" />
+                <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+                <ScalarProperty Name="IDUSUARIOR" ColumnName="IDUSUARIOR" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="DISTANCIA" ColumnName="DISTANCIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_recogidas">
+            <EntityTypeMapping TypeName="LigalModel.gen_recogidas">
+              <MappingFragment StoreEntitySet="gen_recogidas">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDRUTA" ColumnName="IDRUTA" />
+                <ScalarProperty Name="IDPUNTO" ColumnName="IDPUNTO" />
+                <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+                <ScalarProperty Name="IDCLIENTE" ColumnName="IDCLIENTE" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="HORA" ColumnName="HORA" />
+                <ScalarProperty Name="GRADDEJA" ColumnName="GRADDEJA" />
+                <ScalarProperty Name="OBSERVACIONES" ColumnName="OBSERVACIONES" />
+                <ScalarProperty Name="GRADRECOGE" ColumnName="GRADRECOGE" />
+                <ScalarProperty Name="NUMFRASCOS" ColumnName="NUMFRASCOS" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="IDSERIE" ColumnName="IDSERIE" />
+                <ScalarProperty Name="IDMONEDA" ColumnName="IDMONEDA" />
+                <ScalarProperty Name="NOMCLIENTE" ColumnName="NOMCLIENTE" />
+                <ScalarProperty Name="DIRCLIENTE" ColumnName="DIRCLIENTE" />
+                <ScalarProperty Name="IDTIPODOC" ColumnName="IDTIPODOC" />
+                <ScalarProperty Name="NUMERO" ColumnName="NUMERO" />
+                <ScalarProperty Name="NUMCOMPLETO" ColumnName="NUMCOMPLETO" />
+                <ScalarProperty Name="IDEMPRESA" ColumnName="IDEMPRESA" />
+                <ScalarProperty Name="GRESTIMADAS" ColumnName="GRESTIMADAS" />
+                <ScalarProperty Name="IDMOTIVO" ColumnName="IDMOTIVO" />
+                <ScalarProperty Name="FPROGRAMADA" ColumnName="FPROGRAMADA" />
+                <ScalarProperty Name="EXECUTED" ColumnName="EXECUTED" />
+                <ScalarProperty Name="PROGRAMADA" ColumnName="PROGRAMADA" />
+                <ScalarProperty Name="IDLIGAL" ColumnName="IDLIGAL" />
+                <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_recogidasR">
+            <EntityTypeMapping TypeName="LigalModel.gen_recogidasR">
+              <MappingFragment StoreEntitySet="gen_recogidasR">
+                <ScalarProperty Name="VIDEO" ColumnName="VIDEO" />
+                <ScalarProperty Name="FOTO3" ColumnName="FOTO3" />
+                <ScalarProperty Name="FOTO2" ColumnName="FOTO2" />
+                <ScalarProperty Name="FOTO1" ColumnName="FOTO1" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDCLIENTE" ColumnName="IDCLIENTE" />
+                <ScalarProperty Name="GRESTIMADAS" ColumnName="GRESTIMADAS" />
+                <ScalarProperty Name="GRADDEJA" ColumnName="GRADDEJA" />
+                <ScalarProperty Name="GRADRECOGE" ColumnName="GRADRECOGE" />
+                <ScalarProperty Name="NUMFRASCOS" ColumnName="NUMFRASCOS" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="IDRECOGIDA" ColumnName="IDRECOGIDA" />
+                <ScalarProperty Name="IDOBSERVA" ColumnName="IDOBSERVA" />
+                <ScalarProperty Name="OBSERVACIONES" ColumnName="OBSERVACIONES" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_RESULTADOQUINOLONAS">
+            <EntityTypeMapping TypeName="LigalModel.GEN_RESULTADOQUINOLONAS">
+              <MappingFragment StoreEntitySet="GEN_RESULTADOQUINOLONAS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_resultados">
+            <EntityTypeMapping TypeName="LigalModel.gen_resultados">
+              <MappingFragment StoreEntitySet="gen_resultados">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_rutasrecogida">
+            <EntityTypeMapping TypeName="LigalModel.gen_rutasrecogida">
+              <MappingFragment StoreEntitySet="gen_rutasrecogida">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CODIGOR" ColumnName="CODIGOR" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="GRADILLAS" ColumnName="GRADILLAS" />
+                <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_SERIECOORDENADAS">
+            <EntityTypeMapping TypeName="LigalModel.GEN_SERIECOORDENADAS">
+              <MappingFragment StoreEntitySet="GEN_SERIECOORDENADAS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SERIEGAN" ColumnName="SERIEGAN" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="COORDX" ColumnName="COORDX" />
+                <ScalarProperty Name="COORDY" ColumnName="COORDY" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="DIRGPS" ColumnName="DIRGPS" />
+                <ScalarProperty Name="XONE" ColumnName="XONE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_series">
+            <EntityTypeMapping TypeName="LigalModel.gen_series">
+              <MappingFragment StoreEntitySet="gen_series">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SERIE" ColumnName="SERIE" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="PREFIJO" ColumnName="PREFIJO" />
+                <ScalarProperty Name="SUFIJO" ColumnName="SUFIJO" />
+                <ScalarProperty Name="SIGNO" ColumnName="SIGNO" />
+                <ScalarProperty Name="IDEMPRESA" ColumnName="IDEMPRESA" />
+                <ScalarProperty Name="PRIMERO" ColumnName="PRIMERO" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_TAREASDIARIO">
+            <EntityTypeMapping TypeName="LigalModel.GEN_TAREASDIARIO">
+              <MappingFragment StoreEntitySet="GEN_TAREASDIARIO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gen_tiposDocumento">
+            <EntityTypeMapping TypeName="LigalModel.Gen_tiposDocumento">
+              <MappingFragment StoreEntitySet="Gen_tiposDocumento">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SIMBOLO" ColumnName="SIMBOLO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="REPORTE" ColumnName="REPORTE" />
+                <ScalarProperty Name="OPCIONES" ColumnName="OPCIONES" />
+                <ScalarProperty Name="PLANTILLA" ColumnName="PLANTILLA" />
+                <ScalarProperty Name="LINEAS" ColumnName="LINEAS" />
+                <ScalarProperty Name="ENCABEZADO" ColumnName="ENCABEZADO" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_tipouser">
+            <EntityTypeMapping TypeName="LigalModel.gen_tipouser">
+              <MappingFragment StoreEntitySet="gen_tipouser">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+                <ScalarProperty Name="ETIQUETA" ColumnName="ETIQUETA" />
+                <ScalarProperty Name="DERECHOS" ColumnName="DERECHOS" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_TIPOVISITA">
+            <EntityTypeMapping TypeName="LigalModel.GEN_TIPOVISITA">
+              <MappingFragment StoreEntitySet="GEN_TIPOVISITA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TIPOVISITA" ColumnName="TIPOVISITA" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_trata">
+            <EntityTypeMapping TypeName="LigalModel.gen_trata">
+              <MappingFragment StoreEntitySet="gen_trata">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDINSP" ColumnName="IDINSP" />
+                <ScalarProperty Name="FECHAT" ColumnName="FECHAT" />
+                <ScalarProperty Name="IDTRATA" ColumnName="IDTRATA" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_usuarios">
+            <EntityTypeMapping TypeName="LigalModel.gen_usuarios">
+              <MappingFragment StoreEntitySet="gen_usuarios">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDEMPRESA" ColumnName="IDEMPRESA" />
+                <ScalarProperty Name="IDTIPO" ColumnName="IDTIPO" />
+                <ScalarProperty Name="LOGIN" ColumnName="LOGIN" />
+                <ScalarProperty Name="PWD" ColumnName="PWD" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="APELLIDO1" ColumnName="APELLIDO1" />
+                <ScalarProperty Name="APELLIDO2" ColumnName="APELLIDO2" />
+                <ScalarProperty Name="DERECHOS" ColumnName="DERECHOS" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+                <ScalarProperty Name="USERTYPE" ColumnName="USERTYPE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_USUARIOSVEHICULO">
+            <EntityTypeMapping TypeName="LigalModel.GEN_USUARIOSVEHICULO">
+              <MappingFragment StoreEntitySet="GEN_USUARIOSVEHICULO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+                <ScalarProperty Name="IDMATRICULA" ColumnName="IDMATRICULA" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_VEHICULO">
+            <EntityTypeMapping TypeName="LigalModel.GEN_VEHICULO">
+              <MappingFragment StoreEntitySet="GEN_VEHICULO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MATRICULA" ColumnName="MATRICULA" />
+                <ScalarProperty Name="MODELO" ColumnName="MODELO" />
+                <ScalarProperty Name="ANHOCOMPRA" ColumnName="ANHOCOMPRA" />
+                <ScalarProperty Name="TIPOCOMBUSTIBLE" ColumnName="TIPOCOMBUSTIBLE" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_visitas">
+            <EntityTypeMapping TypeName="LigalModel.gen_visitas">
+              <MappingFragment StoreEntitySet="gen_visitas">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DATAFICHA" ColumnName="DATAFICHA" />
+                <ScalarProperty Name="GANDEIRO" ColumnName="GANDEIRO" />
+                <ScalarProperty Name="SERIE" ColumnName="SERIE" />
+                <ScalarProperty Name="DATAMOSTRA" ColumnName="DATAMOSTRA" />
+                <ScalarProperty Name="RESULTADO" ColumnName="RESULTADO" />
+                <ScalarProperty Name="NUMVACAS" ColumnName="NUMVACAS" />
+                <ScalarProperty Name="LITROSLEITE" ColumnName="LITROSLEITE" />
+                <ScalarProperty Name="RESULTADOCHARM" ColumnName="RESULTADOCHARM" />
+                <ScalarProperty Name="MAMITES" ColumnName="MAMITES" />
+                <ScalarProperty Name="PRESCRIPCION" ColumnName="PRESCRIPCION" />
+                <ScalarProperty Name="REXTRATAMENTO" ColumnName="REXTRATAMENTO" />
+                <ScalarProperty Name="RECEITAS" ColumnName="RECEITAS" />
+                <ScalarProperty Name="ALMACENAMED" ColumnName="ALMACENAMED" />
+                <ScalarProperty Name="TEMPESPMAL" ColumnName="TEMPESPMAL" />
+                <ScalarProperty Name="TEMPESPINCUMP" ColumnName="TEMPESPINCUMP" />
+                <ScalarProperty Name="TEMPESPAXUST" ColumnName="TEMPESPAXUST" />
+                <ScalarProperty Name="TARTASECFORA" ColumnName="TARTASECFORA" />
+                <ScalarProperty Name="OUTROSMEDIC" ColumnName="OUTROSMEDIC" />
+                <ScalarProperty Name="TRATAINTRAMAMA" ColumnName="TRATAINTRAMAMA" />
+                <ScalarProperty Name="ORDMUXINCORREC" ColumnName="ORDMUXINCORREC" />
+                <ScalarProperty Name="UTILMEDINADEC" ColumnName="UTILMEDINADEC" />
+                <ScalarProperty Name="ANIMALNOVO" ColumnName="ANIMALNOVO" />
+                <ScalarProperty Name="OUTROS" ColumnName="OUTROS" />
+                <ScalarProperty Name="OBSERVA" ColumnName="OBSERVA" />
+                <ScalarProperty Name="ACTUALIZADO" ColumnName="ACTUALIZADO" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gen_visitavet">
+            <EntityTypeMapping TypeName="LigalModel.gen_visitavet">
+              <MappingFragment StoreEntitySet="gen_visitavet">
+                <ScalarProperty Name="VIDEO" ColumnName="VIDEO" />
+                <ScalarProperty Name="FOTO3" ColumnName="FOTO3" />
+                <ScalarProperty Name="FOTO2" ColumnName="FOTO2" />
+                <ScalarProperty Name="FOTO1" ColumnName="FOTO1" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="SERIEGAN" ColumnName="SERIEGAN" />
+                <ScalarProperty Name="COORDX" ColumnName="COORDX" />
+                <ScalarProperty Name="COORDY" ColumnName="COORDY" />
+                <ScalarProperty Name="POSX" ColumnName="POSX" />
+                <ScalarProperty Name="POSY" ColumnName="POSY" />
+                <ScalarProperty Name="OBSERVA" ColumnName="OBSERVA" />
+                <ScalarProperty Name="ACTUALIZADO" ColumnName="ACTUALIZADO" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="PRECISION" ColumnName="PRECISION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="master_replica_queue">
+            <EntityTypeMapping TypeName="LigalModel.master_replica_queue">
+              <MappingFragment StoreEntitySet="master_replica_queue">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="OPERID" ColumnName="OPERID" />
+                <ScalarProperty Name="TIMESTAMP" ColumnName="TIMESTAMP" />
+                <ScalarProperty Name="OPER" ColumnName="OPER" />
+                <ScalarProperty Name="MID" ColumnName="MID" />
+                <ScalarProperty Name="SQL" ColumnName="SQL" />
+                <ScalarProperty Name="DMID" ColumnName="DMID" />
+                <ScalarProperty Name="CONDITIONAL" ColumnName="CONDITIONAL" />
+                <ScalarProperty Name="TBL" ColumnName="TBL" />
+                <ScalarProperty Name="DMIDPR" ColumnName="DMIDPR" />
+                <ScalarProperty Name="DISABLED" ColumnName="DISABLED" />
+                <ScalarProperty Name="BATCHSIZE" ColumnName="BATCHSIZE" />
+                <ScalarProperty Name="RCVTIMESTAMP" ColumnName="RCVTIMESTAMP" />
+                <ScalarProperty Name="PRTIMESTAMP" ColumnName="PRTIMESTAMP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rl">
+            <EntityTypeMapping TypeName="LigalModel.rl">
+              <MappingFragment StoreEntitySet="rl">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="T1" ColumnName="T1" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="T2" ColumnName="T2" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="T" ColumnName="T" />
+                <ScalarProperty Name="CND" ColumnName="CND" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_TIPOINCIDENCIARUTA">
+            <EntityTypeMapping TypeName="LigalModel.GEN_TIPOINCIDENCIARUTA">
+              <MappingFragment StoreEntitySet="GEN_TIPOINCIDENCIARUTA">
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="INCIDENCIA" ColumnName="INCIDENCIA" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

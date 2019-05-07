@@ -1,0 +1,42 @@
+﻿@model IEnumerable<LigalFrontend.ViewModels.VisitasGanaderosVM>
+
+@using LigalFrontend.Helpers;
+@using PagedList.Mvc;
+@using PagedList;
+
+@{
+    Html.RenderPartial("~/Views/Shared/DisplayTemplates/divTituloTabla.cshtml");
+}
+
+@Html.Hidden("campoOculto")
+
+<div class="form-group">
+    <table class="table table-inverse table-hover">
+        <tr>
+            @Html.CustomThFor(model => model.First().visitasVet.FECHA)
+            @Html.CustomThFor(model => model.First().usuario.NOMBRE)
+            @Html.CustomThFor(model => model.First().visitasVet.SERIEGAN)
+            @Html.CustomThFor(model => model.First().visitasVet.COORDX)
+            @Html.CustomThFor(model => model.First().visitasVet.COORDY)
+            @Html.CustomThFor(model => model.First().visitasVet.OBSERVA)
+        </tr>
+        @foreach (var item in Model)
+            {
+            <tr>
+                @Html.CustomTdFor(model => item.visitasVet.FECHA)
+                @Html.CustomTdFor(model => item.usuario.NOMBRE)
+                @Html.CustomTdFor(model => item.visitasVet.SERIEGAN)
+                @Html.CustomTdFor(model => item.visitasVet.COORDX)
+                @Html.CustomTdFor(model => item.visitasVet.COORDY)
+                @Html.CustomTdFor(model => item.visitasVet.OBSERVA)
+            </tr>
+        }
+    </table>
+</div>
+
+<div class="totalResultados">
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action(ViewBag.nombreAction, new { page }), new PagedListRenderOptions
+    {
+        LiElementClasses = new List<string> { "yourClass" }
+    })
+</div>

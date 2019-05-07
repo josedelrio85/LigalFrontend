@@ -1,0 +1,420 @@
+﻿/* Tipografía logo H.H. Samuel font */
+
+/*@import url(https://fonts.googleapis.com/css?family=Roboto+Slab|Ubuntu);*/
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px !important;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.menu
+{
+    background-color: #04A3ED;
+    border-bottom: 4px solid #eb9316;
+    width:100%;
+    height: auto;
+    padding: 0 10px;
+    /*position: fixed;*/
+    margin: 0px;
+    z-index: 1;
+    opacity: 0.9;
+}
+
+.menu  .navbar-nav > .active > a
+{
+    background-color : #04A3ED;
+    color: white;
+    font-weight: bold;
+}
+
+.menu  .navbar-nav >  li >  a, .menu  .navbar-nav >  li > span
+{
+    font-size: 16px;
+    color: white;
+    padding: 10px 35px;
+}
+
+.menuOpciones
+{
+    width:100%;
+    height: auto;
+    padding: 0 10px;
+    margin: 0px;
+    z-index: 1;
+    opacity: 0.9;
+}
+
+.menuOpciones  .navbar-nav > .active > a
+{
+    font-weight: bold;
+}
+
+.menuOpciones  .navbar-nav >  li >  a:hover, .menu .navbar-nav >  li > span:hover, .menu .navbar-nav >  li > focus:hover
+{
+    color: #eb9316;
+}
+
+.tituloSecciones{
+    font-size:19px !important;
+}
+
+.nav > li > a > p:hover, .nav > li > a > p:focus{
+    background-color: #eb9316 !important;
+}
+
+.nav > li > a:hover{
+    background-color:white !important;
+    cursor:pointer  !important;
+}
+
+.navbar-header > a
+{
+    font-family: 'Ubuntu Condensed', sans-serif;
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    padding: 5px 30px;
+}
+
+.navbar-header > a:hover
+{
+    text-decoration: none;
+    /*color: #04A3ED;*/
+    color:white;
+}
+
+.navbar-right
+h4 a:hover{
+    text-decoration:none;
+    color:#777;
+}
+
+.navbar-right li a:hover{
+    background-color:#eb9316 !important;
+}
+
+.statico{
+    position:relative !important;
+}
+
+.dropdown-menu li a:hover{
+    color: #eb9316 !important;
+}
+
+.btnFiltro{
+    margin-top:2%;
+    margin-bottom:2%;
+    float:right;
+}
+
+.filtro{
+    padding-left:15px;
+}
+
+.margenInput{
+    margin-bottom:15px;
+}
+
+#btnMuestraFiltro{
+    float:right;
+}
+
+#divFiltro{
+    display:none;
+}
+
+.filaBotonera {
+    margin-top:2%;
+    margin-bottom:2%;
+}
+
+.filaBotonera input{
+    margin-right:2%;
+}
+
+label{
+    margin-top:5%;
+}
+
+.input-group div{
+    margin-top:3%;
+}
+
+.labelNormal{
+    font-weight:normal !important;
+}
+
+.enunciadoCheckInsp{
+    font-weight: bold;
+    height: 15px;
+    margin-top: 15px;
+    color:#828282;
+}
+
+input[type="checkbox"]{
+    width:30px !important;
+    height:15px !important;
+    margin-left:25px !important;
+}
+
+.alineaCheckDerecha{
+    float:right;
+    margin-top:5% !important;
+}
+
+.btnEngadirLinhaContent, .btnEngadirLinhaContentNoClick{
+    float:right;
+}
+
+.btnEngadirLinhaContent span, .btnEngadirLinhaContentNoClick span{
+    font-size:22px;
+}
+
+
+.ajustaMargen{
+    margin-left:-15px;
+}
+
+.margenSuperior{
+    margin-top:2%;
+}
+
+/*  COLORES */
+h2, h3{
+    color:#1296d3 !important;
+}
+
+.btn-primary, .btn-info{
+    background-image:linear-gradient(to bottom, #1296d3 0%, #1296d3 100%) !important;
+}
+
+.btn-primary:hover{
+    background-image:linear-gradient(to bottom, #337ab7 0%, #265a88 100%) !important;
+}
+
+.btn-info:hover{
+    /*background-image:linear-gradient(to bottom, #337ab7 100%, #337ab7 100%) !important;*/
+    background-color:#337ab7 !important;
+}
+
+.pagination > .active > a{
+    background-color:#1296d3 !important;
+    border-color:#1296d3 !important;
+}
+
+td .glyphicon-remove, td .glyphicon-pencil{
+    color:#b40a0f;
+    margin-left: 50%;
+    font-weight:bold !important;
+}
+
+td .glyphicon-remove:hover, td .glyphicon-pencil:hover{
+    color:#f70910;
+    cursor:pointer;
+}
+
+td .glyphicon-pencil{
+    color:#1296d3;
+}
+
+td .glyphicon-pencil:hover{
+    color:#337ab7;
+    cursor:pointer;
+}
+
+.glyphicon-plus-sign, .glyphicon-export{
+    color:#1296d3;
+    font-size:35px;
+}
+
+.glyphicon-plus-sign:hover, .glyphicon-export:hover{
+    color:#337ab7;
+    cursor:pointer;
+}
+
+#btnCrear .glyphicon-plus-sign, #btnExportar .glyphicon-export{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    float: right;
+}
+
+.field-validation-error{
+    color:#cb2b2b !important;
+}
+
+
+/* PESTAÑAS */
+.pestanasInspeccion {
+    background-color: #1296d3;
+    height: 45px;
+    border-radius: 1px;
+    border-right:1px solid #fff;
+}
+
+.pestanasInspeccion a{
+    display: block;
+    margin-top: 5%;
+    padding-left: 25%;
+}
+
+.pestanasInspeccion a span{
+    color:#fff !important;
+    font-weight: bold;
+}
+
+.pestanasInspeccion a:hover{
+    text-decoration:none;
+}
+
+#causaPositivo, #datosOrigen, #observaciones {
+    display:none;
+}
+
+*#pest_datosInspeccion:hover, #pest_causaPositivo:hover, #pest_datosOrigen:hover, #pest_observaciones:hover {
+    cursor:pointer;
+    background-color:#eb9316;
+}
+
+.colorHoverActivoPest{
+    background-color:#eb9316;
+}
+
+/* TABLAS   */
+th{
+    text-align:left;
+}
+
+.table td, .table th{
+    padding:.75rem;
+    border-top:1px solid #1296d3;
+}
+
+.table-inverse th{
+    color:#fff;
+    background-color:#1296d3;
+}
+
+.table thead th{
+    vertical-align:bottom;
+    border-bottom:2px solid #1296d3;
+}
+
+th > a{
+    color:#fff;
+    cursor:pointer;
+}
+
+th > a:hover{
+    color:#fff;
+    text-decoration:none;
+}
+
+td > a{
+    color:#000;
+}
+
+tbody td a:hover{
+    text-decoration:none;
+}
+
+.tablaTitulo{
+    text-align:center;
+}
+
+/*  MAPA  */
+.containerMapa{
+    height:700px; 
+    margin-bottom: 15%;
+}
+
+/* MENU INDEX   */
+.menuIndex li{
+    list-style-type:none;
+    margin-bottom: 10px;
+}
+
+.menuIndex li span {
+    color:#337ab7;
+    padding-right: 10px;
+}
+
+.menuIndex li a{
+    color:#7a7373;
+    font-weight:bold;
+}
+
+.menuIndex li a:hover{
+    text-decoration:none;
+    color:#eb9316;
+}
+
+.borderIndex{
+}
+
+.borderTopIndex{
+    border-top: 1px solid #BADA55;
+}
+
+/*** FOOTER ***/
+#wrap {
+    min-height: 100%;
+    margin-bottom:-70px;
+}
+
+.footer,
+.push {
+  height: 70px;
+}
+
+.footer{
+    background-color: #f5f5f5;
+}
+
+.texto-footer{
+    text-decoration:none;
+    font-size: 17px;
+    float: right;
+}
+
+.texto-footer:hover {
+    text-decoration: none;
+    color: #777;
+}
+
+
+/* LOGOFF */
+.anchoBoton{
+    width:100%; 
+}
+
+
+.alineaDerecha{
+    float:right;
+}
+
+.textoDespedida{
+    margin-top:45px; 
+    margin-bottom:45px;
+}
+
+.textoDespedida p{
+    font-size:17px;
+}
+
+.alineaCentro{
+    text-align:center;
+}
+
+
+
+#usuarioLogued{
+
+}

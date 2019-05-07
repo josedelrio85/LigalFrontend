@@ -1,0 +1,31 @@
+﻿@model LigalFrontend.ViewModels.SeguimientoGpsVM
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Seguimiento GPS";
+    var controlador = ViewContext.RouteData.Values["controller"].ToString();
+}
+
+@Html.AntiForgeryToken()
+@{
+    Html.RenderPartial("~/Views/Shared/Buscador/_FiltroSeguimientoGps.cshtml");
+}
+
+@section Scripts
+{
+
+<script type="text/javascript">
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script> 
+}
+
+@{
+    Html.RenderPartial("~/Views/Shared/DisplayTemplates/divTituloPosicionamiento.cshtml");
+}
+
+
+<div class="containerMapa">
+    <div id="map" class="map-canvas"></div>
+</div>
+
+
+<div id="indexReal"></div>

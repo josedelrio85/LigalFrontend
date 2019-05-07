@@ -1,0 +1,39 @@
+﻿@model MvcSiteMapProvider.Web.Html.Models.MenuHelperModel
+@using System.Web.Mvc.Html
+@using MvcSiteMapProvider.Web.Html.Models
+
+@helper  TopMenu(List<SiteMapNodeModel> nodeList)
+{  
+
+    foreach (SiteMapNodeModel node in nodeList)
+    {
+        string url = node.IsClickable ? node.Url : "#";
+
+        if (node.Children.Any())
+        {
+            <div class="col-lg-6 col-sm-6 col-xs-12 borderIndex">
+                <h3>@node.Title</h3>
+
+                @Prueba(node.Children)
+            </div>
+         }
+    }
+    
+}
+
+@helper Prueba(SiteMapNodeModelList nodeList)
+{
+    <ul class="menuIndex">
+        @foreach (SiteMapNodeModel node in nodeList)
+        {
+            string url = node.IsClickable ? node.Url : "#";
+
+            if (!node.Children.Any())
+            {
+                <li><a href="@url"><span class="glyphicon glyphicon-plus"></span>@node.Title</a></li>
+            }
+        }
+    </ul>
+}
+
+@TopMenu(Model.Nodes)

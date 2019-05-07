@@ -1,0 +1,28 @@
+﻿@model LigalFrontend.ViewModels.ImageSliderVM
+
+@if (Model.lista.Any())
+{
+    foreach (var aa in Model.lista)
+    {
+        if (aa != null)
+        {
+            if (aa.Contains(".3gp") || aa.Contains(".mp4"))
+            {
+                <div class="col-xs-12 col-md-6">
+                    <video style="width:100%; height:auto;" controls>
+                        @*<source src="@aa.ToString()" type="video/mp4" />*@
+                        <source src="/ReplicaFiles/@aa.ToString()" type="video/mp4" />
+                    </video>
+                </div>
+            }
+            else
+            {
+                <div class="col-xs-12 col-md-6">
+                    @*<img class="img-responsive" src="@aa.ToString()" style="width: 100%; margin-top: 10px; margin-bottom: 10px;" />*@
+                    <img class="img-responsive" src="/ReplicaFiles/@aa.ToString()" style="width: 100%; margin-top: 10px; margin-bottom: 10px;" />
+                    @*/ReplicaFiles/ => Truco para evitar tema carpetas XOne... *@
+                </div>
+            }
+        }
+    }
+}

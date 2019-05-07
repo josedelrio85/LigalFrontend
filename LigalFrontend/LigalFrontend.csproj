@@ -1,0 +1,816 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AF2B4E8D-D5F7-42E7-9F3A-D3F9115B5E97}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LigalFrontend</RootNamespace>
+    <AssemblyName>LigalFrontend</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+    <IncludeIisSettings>false</IncludeIisSettings>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DelegateDecompiler, Version=1.0.0.0, Culture=neutral, PublicKeyToken=93b26a10a04705bd, processorArchitecture=MSIL">
+      <HintPath>..\packages\DelegateDecompiler.0.23.0\lib\net40-client\DelegateDecompiler.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DelegateDecompiler.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=93b26a10a04705bd, processorArchitecture=MSIL">
+      <HintPath>..\packages\DelegateDecompiler.EntityFramework.0.23.0\lib\net45\DelegateDecompiler.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="JSV.XOne.Replica, Version=1.0.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\Downloads\Xone\JSV XOne Replica dll [Visual Studio]\SQL\JSV.XOne.Replica.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqKit.EntityFramework, Version=1.1.9.0, Culture=neutral, PublicKeyToken=b6c8cfc71f7a6a80, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqKit.EntityFramework.1.1.9.0\lib\net45\LinqKit.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.4.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.4.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.4.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.4.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.4.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.4.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mono.Reflection, Version=1.1.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Reflection.1.1.0.0\lib\Mono.Reflection.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvcSiteMapProvider, Version=4.6.22.0, Culture=neutral, PublicKeyToken=1923abe4657913cc, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvcSiteMapProvider.MVC5.Core.4.6.22\lib\net45\MvcSiteMapProvider.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvcSiteMapProvider.WebActivator, Version=4.6.22.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvcSiteMapProvider.MVC5.4.6.22\lib\net45\MvcSiteMapProvider.WebActivator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net45\System.Diagnostics.DiagnosticSource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\DiarioController.cs" />
+    <Compile Include="Controllers\InspeccionesAleatoriasController.cs" />
+    <Compile Include="Controllers\InspeccionesAutocontrolController.cs" />
+    <Compile Include="Controllers\ClientesenPuntoController.cs" />
+    <Compile Include="Controllers\ProductosgrController.cs" />
+    <Compile Include="Controllers\RecogClientesController.cs" />
+    <Compile Include="Controllers\ResultadosQuinolonaController.cs" />
+    <Compile Include="Controllers\TipoIncidenciaRutaController.cs" />
+    <Compile Include="Controllers\TratamientoController.cs" />
+    <Compile Include="Controllers\UsuariosVehiculoController.cs" />
+    <Compile Include="Controllers\VisitasGanaderoGPSController.cs" />
+    <Compile Include="Controllers\MotivosController.cs" />
+    <Compile Include="Controllers\observaController.cs" />
+    <Compile Include="Controllers\InsercionRecogidasNController.cs" />
+    <Compile Include="Controllers\InspeccionesQuinoGPSController.cs" />
+    <Compile Include="Controllers\InspeccionesGPSController.cs" />
+    <Compile Include="Controllers\ObsInspController.cs" />
+    <Compile Include="Controllers\ProductosController.cs" />
+    <Compile Include="Controllers\ResultadosController.cs" />
+    <Compile Include="Controllers\SeguimientoGPSController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
+    <Compile Include="Controllers\VehiculoController.cs" />
+    <Compile Include="DAL\ProductosgrRepo.cs" />
+    <Compile Include="DAL\ClientesRepo.cs" />
+    <Compile Include="DAL\DiarioRepo.cs" />
+    <Compile Include="DAL\TratamientoRepo.cs" />
+    <Compile Include="DAL\UsuariosVehiculoRepo.cs" />
+    <Compile Include="Filters\CustomHandleErrorAttribute.cs" />
+    <Compile Include="Filters\TrackUserIp.cs" />
+    <Compile Include="Helpers\AttributeUsageAttribute.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PuntosRecogidaController.cs" />
+    <Compile Include="DAL\ClientesEnPuntoRepo.cs" />
+    <Compile Include="DAL\GenericRepository.cs" />
+    <Compile Include="DAL\IGenericRepository.cs" />
+    <Compile Include="DAL\InsercionRecogidasRepo.cs" />
+    <Compile Include="DAL\InspeccionesGpsRepo.cs" />
+    <Compile Include="DAL\InspeccionesRepo.cs" />
+    <Compile Include="DAL\PuntosRecogidaRepo.cs" />
+    <Compile Include="DAL\IViewModelRepository.cs" />
+    <Compile Include="DAL\RecogClientesRepo.cs" />
+    <Compile Include="DAL\SeguimientoGpsRepo.cs" />
+    <Compile Include="DAL\UsuariosRepo.cs" />
+    <Compile Include="DAL\VehiculoRepo.cs" />
+    <Compile Include="DAL\VisitasGanaderosRepo.cs" />
+    <Compile Include="Functions\Functions.cs" />
+    <Compile Include="Functions\Globals.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Helpers.cs" />
+    <Compile Include="Helpers\ThHelper.cs" />
+    <Compile Include="Models\Buscador\buscadorProductosgr.cs" />
+    <Compile Include="Models\Buscador\buscadorClientesenPunto.cs" />
+    <Compile Include="Models\Buscador\buscadorDiario.cs" />
+    <Compile Include="Models\Buscador\buscadorInspecciones.cs" />
+    <Compile Include="Models\Buscador\buscadorVisitasGanadero.cs" />
+    <Compile Include="Models\Buscador\buscadorInsercionRecogidas.cs" />
+    <Compile Include="Models\Buscador\buscadorInspeccionesGps.cs" />
+    <Compile Include="Models\Buscador\buscadorClientes.cs" />
+    <Compile Include="Models\Buscador\buscadorSeguimientoGps.cs" />
+    <Compile Include="Models\Buscador\buscadorVehiculo.cs" />
+    <Compile Include="Models\Buscador\buscadorUsuarios.cs" />
+    <Compile Include="Models\Buscador\buscadorPuntosRecogida.cs" />
+    <Compile Include="Models\Buscador\ClaseDummy.cs" />
+    <Compile Include="Models\gen_actionlogs.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_antibioticos.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_bolsas.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_bolsasrecogida.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_clientes.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_clientesenpunto.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_conectargps.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GEN_CONSOLAREPLICA.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GEN_CONSOLAVBS.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GEN_CONTROLTEMPERATURA.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GEN_COORDENADASGPS.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Correos.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_detvisita.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GEN_DIARIOMATRICULA.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_Distancia.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_empresa.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_estados.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_globalsearch.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_gradillas.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_inicioruta.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_inspecciones.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_laboratorios.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_monedas.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_motivos.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_observa.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_ObsInsp.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_perifericos.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_productos.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_productosgr.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_programacion.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_puntorecogidadia.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_puntosenruta.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GEN_PUNTOSRECOGIDA.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_recogidas.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_recogidasR.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GEN_RESULTADOQUINOLONAS.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_resultados.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_rutasrecogida.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GEN_SERIECOORDENADAS.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_series.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GEN_TAREASDIARIO.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GEN_TIPOINCIDENCIARUTA.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_tiposDocumento.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_tipouser.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GEN_TIPOVISITA.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_trata.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_usuarios.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GEN_USUARIOSVEHICULO.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GEN_VEHICULO.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_visitas.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gen_visitavet.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LigalModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LigalModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LigalModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LigalModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LigalModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\master_replica_queue.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Metadata.cs" />
+    <Compile Include="Models\objetoOrdenMapa.cs" />
+    <Compile Include="Models\objetoResultadoMapa.cs" />
+    <Compile Include="Models\PartialClasses.cs" />
+    <Compile Include="Models\rl.cs">
+      <DependentUpon>LigalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ImageSliderVM.cs" />
+    <Compile Include="ViewModels\ClientesEnPuntoVM.cs" />
+    <Compile Include="ViewModels\ClienteVM.cs" />
+    <Compile Include="ViewModels\DiarioMatriculaVM.cs" />
+    <Compile Include="ViewModels\InsercionRecogidasVM.cs" />
+    <Compile Include="ViewModels\DiarioBuscadorVM.cs" />
+    <Compile Include="ViewModels\InspeccionesVM.cs" />
+    <Compile Include="ViewModels\InspeccionesGpsVM.cs" />
+    <Compile Include="ViewModels\PuntosRecogidaVM.cs" />
+    <Compile Include="ViewModels\RecogClientesVM.cs" />
+    <Compile Include="ViewModels\SeguimientoGpsVM.cs" />
+    <Compile Include="ViewModels\TratamientoVM.cs" />
+    <Compile Include="ViewModels\UsuarioLoginVM.cs" />
+    <Compile Include="ViewModels\UsuariosVehiculoVM.cs" />
+    <Compile Include="ViewModels\ProductosgrVM.cs" />
+    <Compile Include="ViewModels\VehiculoVM.cs" />
+    <Compile Include="ViewModels\UsuariosVM.cs" />
+    <Compile Include="ViewModels\VisitasGanaderosVM.cs" />
+    <Compile Include="ViewModels\InspBuscadorVM.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Ligal.mdf" />
+    <Content Include="App_Data\Ligal_log.ldf">
+      <DependentUpon>Ligal.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap-datetimepicker.css" />
+    <Content Include="Content\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\estilos.css" />
+    <Content Include="Content\imagenes\img_mountains_wide.jpg" />
+    <Content Include="Content\imagenes\img_nature_wide.jpg" />
+    <Content Include="Content\imagenes\img_snow_wide.jpg" />
+    <Content Include="Content\imagenes\Ligal.jpg" />
+    <Content Include="Content\imagenes\ligal.PNG" />
+    <Content Include="Content\imagenes\ligal_foto.jpg" />
+    <Content Include="Content\imagenes\ligal_logo.jpg" />
+    <Content Include="Content\imagenes\ligal_logo2.png" />
+    <Content Include="Content\imagenes\SoloLogo.png" />
+    <Content Include="Content\mediaquery\min-1280px.css" />
+    <Content Include="Content\mediaquery\min-1920px.css" />
+    <Content Include="Content\mediaquery\min-320px.css" />
+    <Content Include="Content\mediaquery\min-768px.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Models\LigalModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LigalModel.edmx</DependentUpon>
+      <LastGenOutput>LigalModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\LigalModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LigalModel.edmx</DependentUpon>
+      <LastGenOutput>LigalModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\auxiliares.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Funciones.js" />
+    <Content Include="CodeTemplates\MvcControllerWithContext\Controller.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\Create.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\Edit.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\List.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\Imports.include.t4" />
+    <Content Include="CodeTemplates\MvcView\ModelMetadataFunctions.cs.include.t4" />
+    <Content Include="Mvc.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="packages.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <EntityDeploy Include="Models\LigalModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LigalModel.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EntityDeploy>
+    <Content Include="Models\LigalModel.edmx.diagram">
+      <DependentUpon>LigalModel.edmx</DependentUpon>
+    </Content>
+    <None Include="MvcSiteMapSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\PublishProfiles\LigalFrontend.pubxml" />
+    <Content Include="Scripts\funcionesDiario.js" />
+    <Content Include="Scripts\FuncionesInspeccion.js" />
+    <None Include="Scripts\jquery-3.2.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.2.1.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\RecogClientes\Create.cshtml" />
+    <Content Include="Views\RecogClientes\Edit.cshtml" />
+    <Content Include="Views\PuntosRecogida\Index.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_DialogDelete.cshtml" />
+    <Content Include="Views\Shared\Buscador\_FiltroPuntosRecogida.cshtml" />
+    <Content Include="Views\PuntosRecogida\Filtro.cshtml" />
+    <Content Include="Views\InspeccionesGPS\Index.cshtml" />
+    <Content Include="Views\Shared\Buscador\_FiltroInspeccionesGps.cshtml" />
+    <Content Include="Views\Shared\Buscador\_FiltroInspeccionesQuinoGps.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Logoff.cshtml" />
+    <Content Include="Views\Shared\_Login.cshtml" />
+    <Content Include="Views\InsercionRecogidasN\Index.cshtml" />
+    <Content Include="Views\InsercionRecogidasN\Filtro.cshtml" />
+    <Content Include="Views\Shared\Buscador\_FiltroInsercionRecogidasN.cshtml" />
+    <Content Include="Views\InsercionRecogidasN\Create.cshtml" />
+    <Content Include="Views\InsercionRecogidasN\Edit.cshtml" />
+    <Content Include="Views\RecogClientes\getRecogCliente.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\RecogClientesVM.cshtml" />
+    <Content Include="Views\observa\Create.cshtml" />
+    <Content Include="Views\observa\Edit.cshtml" />
+    <Content Include="Views\observa\Index.cshtml" />
+    <Content Include="Views\Productos\Create.cshtml" />
+    <Content Include="Views\Productos\Edit.cshtml" />
+    <Content Include="Views\Productos\Index.cshtml" />
+    <Content Include="Views\ObsInsp\Create.cshtml" />
+    <Content Include="Views\ObsInsp\Edit.cshtml" />
+    <Content Include="Views\ObsInsp\Index.cshtml" />
+    <Content Include="Views\Resultados\Create.cshtml" />
+    <Content Include="Views\Resultados\Edit.cshtml" />
+    <Content Include="Views\Resultados\Index.cshtml" />
+    <Content Include="Views\Motivos\Create.cshtml" />
+    <Content Include="Views\Motivos\Edit.cshtml" />
+    <Content Include="Views\Motivos\Index.cshtml" />
+    <Content Include="Views\Clientes\Create.cshtml" />
+    <Content Include="Views\Clientes\Edit.cshtml" />
+    <Content Include="Views\Clientes\Index.cshtml" />
+    <Content Include="Views\Clientes\Filtro.cshtml" />
+    <Content Include="Views\Shared\Buscador\_FiltroClientes.cshtml" />
+    <Content Include="Views\Usuarios\Create.cshtml" />
+    <Content Include="Views\Usuarios\Edit.cshtml" />
+    <Content Include="Views\Usuarios\Index.cshtml" />
+    <Content Include="Views\Shared\Buscador\_FiltroUsuarios.cshtml" />
+    <Content Include="Views\Usuarios\Filtro.cshtml" />
+    <Content Include="Views\Vehiculo\Create.cshtml" />
+    <Content Include="Views\Vehiculo\Edit.cshtml" />
+    <Content Include="Views\Vehiculo\Index.cshtml" />
+    <Content Include="Views\Shared\Buscador\_FiltroVehiculos.cshtml" />
+    <Content Include="Views\Vehiculo\Filtro.cshtml" />
+    <Content Include="Views\SeguimientoGPS\Index.cshtml" />
+    <Content Include="Views\Shared\Buscador\_FiltroSeguimientoGps.cshtml" />
+    <Content Include="Views\Shared\Buscador\_FiltroVisitasGanadero.cshtml" />
+    <Content Include="Views\VisitasGanaderoGPS\Index.cshtml" />
+    <Content Include="Views\Inspecciones\Create.cshtml" />
+    <Content Include="Views\Inspecciones\Edit.cshtml" />
+    <Content Include="Views\Inspecciones\Index.cshtml" />
+    <Content Include="Views\Inspecciones\Filtro.cshtml" />
+    <Content Include="Views\Shared\Buscador\_FiltroInspecciones.cshtml" />
+    <Content Include="Views\Shared\_DialogAlert.cshtml" />
+    <Content Include="Views\Shared\_Navbar.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\divMuestraFiltro.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\divCrear.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\divTitulo.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\divTituloPosicionamiento.cshtml" />
+    <Content Include="Views\TratamientoVM\getTratamientoVM.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\TratamientoVM.cshtml" />
+    <Content Include="Views\Tratamiento\getElement.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\TratamientoVM.cshtml" />
+    <Content Include="Views\ResultadosQuinolona\Create.cshtml" />
+    <Content Include="Views\ResultadosQuinolona\Edit.cshtml" />
+    <Content Include="Views\ResultadosQuinolona\Index.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\gen_usuarios.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\gen_usuarios.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\UsuariosVehiculoVM.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\UsuariosVehiculoVM.cshtml" />
+    <Content Include="Views\UsuariosVehiculo\getElement.cshtml" />
+    <Content Include="Views\Diario\Index.cshtml" />
+    <Content Include="Views\Diario\Filtro.cshtml" />
+    <Content Include="Views\Shared\Buscador\_FiltroDiario.cshtml" />
+    <Content Include="Views\Diario\Edit.cshtml" />
+    <Content Include="Views\Diario\Create.cshtml" />
+    <Content Include="Views\InspeccionesGPS\Filtro.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\divTituloTabla.cshtml" />
+    <Content Include="Views\VisitasGanaderoGPS\Filtro.cshtml" />
+    <Content Include="Views\ClientesenPunto\Index.cshtml" />
+    <Content Include="Views\ClientesenPunto\Filtro.cshtml" />
+    <Content Include="Views\Shared\Buscador\_FiltroClientesenPunto.cshtml" />
+    <Content Include="Views\ClientesenPunto\Create.cshtml" />
+    <Content Include="Views\ClientesenPunto\Edit.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ProductosgrVM.cshtml" />
+    <Content Include="Views\Productosgr\getElement.cshtml" />
+    <Content Include="Views\RecogClientes\getElement.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\BootstrapIndexHelperModel.cshtml" />
+    <Content Include="Views\PuntosRecogida\Create.cshtml" />
+    <Content Include="Views\PuntosRecogida\Edit.cshtml" />
+    <Content Include="Views\Shared\_Logoff.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\BootstrapMenuHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\BootstrapMenuHelperModel - Copia.cshtml" />
+    <Content Include="Views\SeguimientoGPS\Filtro.cshtml" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.2.1.min.map" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapTitleHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapPathHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModelList.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\MetaRobotsHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\MenuHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\CanonicalHelperModel.cshtml" />
+    <Content Include="Views\TipoIncidenciaRuta\Create.cshtml" />
+    <Content Include="Views\TipoIncidenciaRuta\Edit.cshtml" />
+    <Content Include="Views\TipoIncidenciaRuta\Index.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\_ImageSlider.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Logs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2545</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2545/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

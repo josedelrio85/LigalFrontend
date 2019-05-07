@@ -1,0 +1,14 @@
+﻿@model LigalFrontend.ViewModels.TratamientoVM
+@using LigalFrontend.Helpers
+
+@{
+    ViewBag.id = Model.tratamiento.ID;
+    ViewBag.variable = Model.GetHashCode().ToString();
+    var controllerContent = "Tratamiento";
+}
+
+<tr>
+    @Html.CustomTdFor(model => model.tratamiento.FECHAT)
+    @Html.CustomTdFor(model => model.antibioticos.NomeProducto)
+    <td><a id="removeContent_@(controllerContent)_@(ViewBag.id)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+</tr>

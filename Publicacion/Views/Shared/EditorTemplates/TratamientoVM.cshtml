@@ -1,0 +1,13 @@
+﻿@model LigalFrontend.ViewModels.TratamientoVM
+@using LigalFrontend.Helpers
+
+@{
+    ViewBag.variable = Model.GetHashCode().ToString();
+}
+
+
+<tr id="@(ViewBag.variable)">
+    <td id="fecha_@(ViewBag.variable)">@Html.DateHelperFor(model => model.tratamiento.FECHAT)</td>
+    <td>@Html.DropDownListFor(model => model.tratamiento.IDTRATA, new SelectList(Model.listaAntibioticos, "ID", "NomeProducto"), new { @class = "form-control" })</td>
+    <td><a id="deleteFilaContent_ajax"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+</tr>

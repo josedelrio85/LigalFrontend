@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvcSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0"
+            xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
+
+  <mvcSiteMapNode title="Xerais" clickable="false" changeFrequency="Always">
+
+    <mvcSiteMapNode title="Posicionamiento" controller="Home" action="Index">
+      <mvcSiteMapNode title="Seguimiento GPS" controller="SeguimientoGPS" action="Index" />
+      <mvcSiteMapNode title="Inspeccions GPS" controller="InspeccionesGPS" action="Index" />
+      <mvcSiteMapNode title="Inspecciones Quinolonas GPS" controller="InspeccionesQuinoGPS" action="Index" />
+      <mvcSiteMapNode title="Visitas Ganadero GPS" controller="VisitasGanaderoGPS" action="Index" />
+    </mvcSiteMapNode>
+    
+    <mvcSiteMapNode title="Recogidas" controller="Home" action="About">
+      <mvcSiteMapNode title="Puntos Recogida" controller="PuntosRecogida" action="Index" />
+      <mvcSiteMapNode title="Observaciones Recogida" controller="observa" action="Index" />
+      <mvcSiteMapNode title="Productos" controller="Productos" action="Index" />
+      <mvcSiteMapNode title="Inserción Recogidas" controller="InsercionRecogidasN" action="Index" />
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="Maestros" controller="Home" action="Index">
+      <mvcSiteMapNode title="Clientes" controller="Clientes" action="Index" />
+      <mvcSiteMapNode title="Usuarios" controller="Usuarios" action="Index" />
+      <mvcSiteMapNode title="Observaciones" controller="ObsInsp" action="Index" />
+      <mvcSiteMapNode title="Vehiculos" controller="Vehiculo" action="Index" />
+      <mvcSiteMapNode title="Resultados" controller="Resultados" action="Index" />
+      <mvcSiteMapNode title="Resultados Quinolona" controller="ResultadosQuinolona" action="Index" />
+      <mvcSiteMapNode title="Motivos" controller="Motivos" action="Index" />
+      <mvcSiteMapNode title="Clientes en Punto" controller="ClientesenPunto" action="Index" />
+      <mvcSiteMapNode title="Tipo Incidencias en Ruta" controller="TipoIncidenciaRuta" action="Index" />
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="Consultas" controller="Home" action="Index">
+      <mvcSiteMapNode title="Insp. Autocontrol" controller="InspeccionesAutocontrol" action="Index" />
+      <mvcSiteMapNode title="Insp. Aleatorias" controller="InspeccionesAleatorias" action="Index" />
+      <mvcSiteMapNode title="Consulta Insp. Autocontrol" controller="InspeccionesAutocontrol" action="IndexCompleto" />
+      <mvcSiteMapNode title="Consulta Insp. Aleatorias" controller="InspeccionesAleatorias" action="IndexCompleto" />
+      <mvcSiteMapNode title="Diario" controller="Diario" action="Index" />
+    </mvcSiteMapNode>
+    
+  </mvcSiteMapNode>
+
+</mvcSiteMap>

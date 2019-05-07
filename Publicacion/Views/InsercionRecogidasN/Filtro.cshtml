@@ -1,0 +1,48 @@
+﻿@model IEnumerable<LigalFrontend.ViewModels.InsercionRecogidasVM>
+@using PagedList.Mvc;
+@using PagedList;
+@using LigalFrontend.Helpers;
+
+@{
+    var controlador = ViewContext.RouteData.Values["controller"].ToString();
+}
+
+@Html.Hidden("campoOculto")
+
+<div class="form-group">
+    <table class="table table-inverse table-hover">
+        <tr>
+            @Html.CustomThFor(model => model.First().pRecogida.CODIGOP)
+            @Html.CustomThFor(model => model.First().pRecogida.NOMBRE)
+            @Html.CustomThFor(model => model.First().puntoRecogidaDia.FECHA)
+            @Html.CustomThFor(model => model.First().puntoRecogidaDia.PROGRAMADO)
+            @Html.CustomThFor(model => model.First().puntoRecogidaDia.VISITADO)
+            <th class="tablaTitulo" scope="col">Eliminar</th>
+            <th class="tablaTitulo" scope="col">Editar</th>
+        </tr>
+        @foreach (var item in Model)
+            {
+            <tr>
+                @Html.CustomTdFor(model => item.pRecogida.CODIGOP)
+                @Html.CustomTdFor(model => item.pRecogida.NOMBRE)
+                @Html.CustomTdFor(model => item.puntoRecogidaDia.FECHA)
+                @Html.CustomTdFor(model => item.puntoRecogidaDia.PROGRAMADO)
+                @Html.CustomTdFor(model => item.puntoRecogidaDia.VISITADO)
+                <td><a id="delete@(item.puntoRecogidaDia.ID)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+                <td><a href="@Url.Action("edit", controlador, new { id = item.puntoRecogidaDia.ID })"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
+            </tr>
+        }
+    </table>
+    @{ Html.RenderPartial("_DialogDelete");}
+</div>
+
+
+
+
+<div class="totalResultados" id="hola">
+    @*La paginación con filtro se ejecuta por ajax*@
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Filtro", new { page }), new PagedListRenderOptions
+   {
+       LiElementClasses = new List<string> { "yourClass" }
+   })
+</div>

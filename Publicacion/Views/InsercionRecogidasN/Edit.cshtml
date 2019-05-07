@@ -1,0 +1,88 @@
+﻿@model LigalFrontend.ViewModels.InsercionRecogidasVM
+@using LigalFrontend.Helpers
+
+@{
+    ViewBag.Title = "Edición Inserción Recogida";
+    var controlador = ViewContext.RouteData.Values["controller"].ToString();
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { name = "formEdit", id = "formEdit", @class = "form-horizontal" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    @Html.HiddenFor(model => model.puntoRecogidaDia.ID)
+    @Html.HiddenFor(model => model.puntoRecogidaDia.ROWID)
+
+
+    <h2>@ViewBag.Title</h2>
+    <div class="form-group ">
+
+        <div class="col-lg-12 col-sm-12 col-xs-12 ">
+            <div class="col-lg-6 col-sm-6 ">
+                @Html.LabelFor(vista => vista.puntoRecogidaDia.FECHA, new { @class = "ajustaMargen" })
+                @Html.DateHelperFor(vista => vista.puntoRecogidaDia.FECHA)
+                @Html.ValidationMessageFor(vista => vista.puntoRecogidaDia.FECHA)
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-sm-6">
+            @Html.LabelFor(vista => vista.puntoRecogidaDia.IDUSUARIO, new { @class = "" })
+            @Html.DropDownListFor(x => x.puntoRecogidaDia.IDUSUARIO, new SelectList(Model.listaUsuarios, "ID", "NOMBRE"), new { @class = "form-control", })
+            @Html.HiddenFor(vista => vista.puntoRecogidaDia.IDUSUARIO)
+            @Html.ValidationMessageFor(vista => vista.puntoRecogidaDia.IDUSUARIO)
+        </div>
+
+        <div class="col-lg-6 col-sm-6">
+            @Html.LabelFor(vista => vista.puntoRecogidaDia.IDPUNTO, new { @class = "" })
+            @Html.DropDownListFor(x => x.puntoRecogidaDia.IDPUNTO, new SelectList(Model.listaPuntoRecogidaDia, "ID", "NOMBRE"), new { @class = "form-control", })
+            @Html.HiddenFor(vista => vista.puntoRecogidaDia.IDPUNTO)
+            @Html.ValidationMessageFor(vista => vista.puntoRecogidaDia.IDPUNTO)
+        </div>
+
+        <div class="col-lg-6 col-sm-6 ">
+            <div class="labelselect flota_izquierda ">
+                @Html.LabelFor(model => model.puntoRecogidaDia.PROGRAMADO)
+                @Html.CheckBoxFor(model => model.BoolProgramado, new { @class = "alineaCheckDerecha" })
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-sm-6 ">
+            <div class="labelselect flota_izquierda ">
+                @Html.LabelFor(model => model.puntoRecogidaDia.VISITADO)
+                @Html.CheckBoxFor(model => model.BoolVisitado, new { @class = "alineaCheckDerecha" })
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-sm-12 col-xs-12 margenSuperior">
+            <table class="table table-inverse table-hover" id="contentRecogClientes">
+                <tr>
+                    @Html.CustomThFor(model => model.listaRecogCliente.First().cliente.CODIGOC)
+                    @Html.CustomThFor(model => model.listaRecogCliente.First().cliente.NOMBREC)
+                    @Html.CustomThFor(model => model.listaRecogCliente.First().recogidasR.GRADDEJA)
+                    @Html.CustomThFor(model => model.listaRecogCliente.First().recogidasR.GRADRECOGE)
+                    @Html.CustomThFor(model => model.listaRecogCliente.First().observa.OBSERVA)
+                    @Html.CustomThFor(model => model.listaRecogCliente.First().recogidasR.OBSERVACIONES)
+                    <th class="tablaTitulo" scope="col">Eliminar</th>
+                    <th class="tablaTitulo" scope="col">Editar</th>
+                </tr>
+                @Html.DisplayFor(model => model.listaRecogCliente)
+            </table>
+            <div class="col-lg-12 col-sm-12 col-xs-12">
+                <a class="btnEngadirLinhaContentNoClick" id="RecogClientes" href="@Url.Action("create","RecogClientes", new { id = Model.puntoRecogidaDia.ID })"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a>
+            </div>
+        </div>
+
+
+        <div class="col-lg-12 col-sm-12 col-xs-12 filaBotonera">
+            <input class="btn btn-default" id="botonLimpar" type="button" name="boton2" value="LIMPAR" onclick="resetForm(formEdit)" />
+            <input class="btn btn-primary" id="botonGardar" type="submit" name="boton" value="GARDAR" />
+            @Html.Hidden("RedirectTo", Url.Action("Index", controlador))
+            <input class="btn btn-warning" id="botonCancelar" type="button" name="boton" value="CANCELAR" onclick="redirect()" />
+        </div>
+    </div>
+    }
+
+
+@{ Html.RenderPartial("_DialogAlert");}

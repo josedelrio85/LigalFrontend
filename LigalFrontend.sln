@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LigalFrontend", "LigalFrontend\LigalFrontend.csproj", "{AF2B4E8D-D5F7-42E7-9F3A-D3F9115B5E97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LigalFrontend.Tests", "LigalFrontend.Tests\LigalFrontend.Tests.csproj", "{45491744-AB90-4406-9947-574C507961F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9C9C7840-C34E-407A-B6E9-F89F2652C7F5}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF2B4E8D-D5F7-42E7-9F3A-D3F9115B5E97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF2B4E8D-D5F7-42E7-9F3A-D3F9115B5E97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF2B4E8D-D5F7-42E7-9F3A-D3F9115B5E97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF2B4E8D-D5F7-42E7-9F3A-D3F9115B5E97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45491744-AB90-4406-9947-574C507961F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45491744-AB90-4406-9947-574C507961F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45491744-AB90-4406-9947-574C507961F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45491744-AB90-4406-9947-574C507961F4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {85E739E7-5F4F-40E6-824E-FD516264417A}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,13 @@
+﻿@model LigalFrontend.Models.GEN_USUARIOS
+@using LigalFrontend.Helpers
+
+@{
+    ViewBag.id = Model.ID;
+    ViewBag.variable = Model.GetHashCode().ToString();
+    var controllerContent = "UsuariosVehiculo";
+}
+
+<tr>
+    @Html.CustomTdFor(model => model.NOMBRE)
+    <td><a id="removeContent_@(controllerContent)_@(ViewBag.id)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+</tr>

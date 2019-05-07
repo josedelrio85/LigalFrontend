@@ -1,0 +1,88 @@
+﻿@model LigalFrontend.ViewModels.RecogClientesVM
+@using LigalFrontend.Helpers
+
+@{
+    ViewBag.Title = "Edición Recogida Clientes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var controlador = ViewContext.RouteData.Values["controller"].ToString();
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { name = "formEdit", id = "formEdit", @class="form-horizontal" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    @Html.HiddenFor(model => model.recogidasR.ID)
+    @Html.HiddenFor(model => model.recogidasR.ROWID)
+    @Html.HiddenFor(model => model.recogidasR.IDRECOGIDA)
+
+
+    <h2>@ViewBag.Title</h2>
+    <div class="form-group ">
+
+        <div class="col-lg-6 col-sm-6">
+            @Html.LabelFor(vista => vista.recogidasR.IDCLIENTE)
+            @Html.DropDownListFor(x => x.recogidasR.IDCLIENTE, new SelectList(Model.listaClientes, "ID", "NOMBREC"), new { @class = "form-control", })
+            @Html.HiddenFor(vista => vista.recogidasR.IDCLIENTE)            
+            @Html.ValidationMessageFor(vista => vista.recogidasR.IDCLIENTE)
+        </div>
+
+        <div class="col-lg-6 col-sm-6">
+            @Html.LabelFor(vista => vista.recogidasR.GRADDEJA)
+            @Html.EditorFor(vista => vista.recogidasR.GRADDEJA, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(vista => vista.recogidasR.GRADDEJA)
+        </div>
+
+        <div class="col-lg-6 col-sm-6">
+            @Html.LabelFor(vista => vista.recogidasR.GRADRECOGE)
+            @Html.EditorFor(vista => vista.recogidasR.GRADRECOGE, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(vista => vista.recogidasR.GRADRECOGE)
+        </div>
+
+        <div class="col-lg-6 col-sm-6">
+            @Html.LabelFor(vista => vista.recogidasR.NUMFRASCOS)
+            @Html.EditorFor(vista => vista.recogidasR.NUMFRASCOS, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(vista => vista.recogidasR.NUMFRASCOS)
+        </div>
+
+        <div class="col-lg-6 col-sm-6">
+            @Html.LabelFor(vista => vista.recogidasR.IDOBSERVA)
+            @Html.DropDownListFor(x => x.recogidasR.IDOBSERVA, new SelectList(Model.listaObservaciones, "ID", "OBSERVA"), new { @class = "form-control", })
+            @Html.HiddenFor(vista => vista.recogidasR.IDOBSERVA)
+            @Html.ValidationMessageFor(vista => vista.recogidasR.IDOBSERVA)
+        </div>
+
+        <div class="col-lg-6 col-sm-6">
+            @Html.LabelFor(vista => vista.recogidasR.OBSERVACIONES)
+            @Html.TextAreaFor(vista => vista.recogidasR.OBSERVACIONES, new { @class = "form-control" })
+            @Html.ValidationMessageFor(vista => vista.recogidasR.OBSERVACIONES)
+        </div>
+
+        @* CONTENT PRODUCTOS *@
+        <div class="col-lg-6 col-sm-6 col-xs-12 margenSuperior">
+            <table class="table table-inverse table-hover" id="contentProductosgr">
+                <tr>
+                    @Html.CustomThFor(model => model.listaProductosgr.First().producto.CODIGOPRO)
+                    @Html.CustomThFor(model => model.listaProductosgr.First().producto.PRODUCTO)
+                    @Html.CustomThFor(model => model.listaProductosgr.First().productogr.CANTIDAD)
+                    @Html.CustomThFor(model => model.listaProductosgr.First().productogr.TEMPERATURA)
+                    <th class="tablaTitulo" scope="col">Eliminar</th>
+                </tr>
+                @Html.DisplayFor(model => model.listaProductosgr)
+            </table>
+            <div class="col-lg-12 col-sm-12 col-xs-12">
+                <a class="btnEngadirLinhaContent" id="Productosgr"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a>
+            </div>
+        </div>
+
+
+        <div class="col-lg-12 col-sm-12 col-xs-12 filaBotonera">
+            <input class="btn btn-default" id="botonLimpar" type="button" name="boton2" value="LIMPAR" onclick="resetForm(formEdit)" />
+            <input class="btn btn-primary" id="botonGardar" type="submit" name="boton" value="GARDAR" />
+            @Html.Hidden("RedirectTo", Url.Action("Edit", "InsercionRecogidasN", new { id = Model.recogidasR.IDRECOGIDA }))
+            <input class="btn btn-warning" id="botonCancelar" type="button" name="boton" value="CANCELAR" onclick="redirect()" />
+        </div>
+    </div>
+}
+
+@{ Html.RenderPartial("_DialogAlert");}

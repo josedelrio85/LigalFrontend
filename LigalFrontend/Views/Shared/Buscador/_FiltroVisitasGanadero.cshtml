@@ -1,0 +1,48 @@
+﻿@model LigalFrontend.ViewModels.VisitasGanaderosVM
+@using LigalFrontend.Helpers;
+
+@{
+    var controlador = ViewContext.RouteData.Values["controller"].ToString();
+}
+
+<div class="row" id="limpiaFiltro">
+
+    <div class="col-lg-3 col-sm-3 col-xs-12">
+        @Html.LabelFor(model => model.buscador.FechaHoraVisitaI, new { @class = "" })
+        @Html.DateHelperFor(model => model.buscador.FechaHoraVisitaI)
+        @Html.ValidationMessageFor(model => model.buscador.FechaHoraVisitaI)
+    </div>
+
+    <div class="col-lg-3 col-sm-3 col-xs-12">
+        @Html.LabelFor(model => model.buscador.FechaHoraVisitaF, new { @class = "" })
+        @Html.DateHelperFor(model => model.buscador.FechaHoraVisitaF)
+        @Html.ValidationMessageFor(model => model.buscador.FechaHoraVisitaF)
+    </div>
+
+    <div class="col-lg-3 col-sm-3 col-xs-12">
+        @Html.LabelFor(model => model.buscador.serieGanadero, new { @class = "" })
+        @Html.TextBoxFor(model => model.buscador.serieGanadero, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.buscador.serieGanadero)
+    </div>
+
+    <div class="col-lg-3 col-sm-3 col-xs-12">
+        @Html.LabelFor(model => model.buscador.idUsuario, new { @class = "" })
+        @Html.DropDownListFor(model => model.buscador.idUsuario, new SelectList(Model.listaUsuarios, "ID", "NOMBRE"), "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.buscador.idUsuario)
+    </div>
+
+    <div class="col-lg-3 col-sm-3 col-xs-12">
+         <div class="labelselect flota_izquierda ">
+            @Html.LabelFor(model => model.buscador.BoolCodMuestra)
+            @Html.CheckBoxFor(model => model.buscador.BoolCodMuestra, new { @class = "alineaCheckDerecha" })
+            @Html.HiddenFor(model => model.buscador.codMuestra)
+        </div>
+    </div>
+
+    <div class="col-lg-12 col-sm-12 col-xs-12">
+        <div class="btnFiltro">
+            <input type="button" value="Limpia" onclick="resetFiltro('limpiaFiltro')" class="btn btn-warning">
+            <input type="button" value="Filtra" id="filtroMapa" class="btn btn-info">
+        </div>
+    </div>
+</div>

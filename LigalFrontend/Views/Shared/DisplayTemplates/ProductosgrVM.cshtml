@@ -1,0 +1,16 @@
+﻿@model LigalFrontend.ViewModels.ProductosgrVM
+@using LigalFrontend.Helpers
+
+@{
+    ViewBag.id = Model.productogr.ID;
+    ViewBag.variable = Model.GetHashCode().ToString();
+    var controllerContent = "Productosgr";
+}
+
+<tr id="@(ViewBag.variable)">
+    <td>@Html.DisplayFor(x => x.producto.CODIGOPRO, new { @class = "form-control" })</td>
+    <td>@Html.DisplayFor(x => x.producto.PRODUCTO, new { @class = "form-control" })</td>
+    <td>@Html.DisplayFor(x => x.productogr.CANTIDAD, new { @class = "form-control" })</td>
+    <td>@Html.DisplayFor(x => x.productogr.TEMPERATURA, new { @class = "form-control" })</td>
+    <td><a id="removeContent_@(controllerContent)_@(ViewBag.id)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+</tr>
