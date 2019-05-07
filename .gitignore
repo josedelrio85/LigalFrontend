@@ -241,5 +241,3 @@ ModelManifest.xml
 # FAKE - F# Make
 .fake/
 /LigalFrontend/Logs
-
-/LigalFrontend/Web.*.config
